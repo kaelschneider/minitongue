@@ -147,7 +147,27 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 ### Nominal morphology
 
-The case inventory, nominal inflectional categories, and differential case-marking conditions are **UNSPECIFIED**.
+### G-MORPH-006 — Nominal case inventory and core alignment
+
+**Statement:** The nominal case inventory is ABS, ERG, GEN, DAT, LOC, CONT, POS, and INS/COM. ABS marks transitive P and inactive S; ERG marks transitive A and active S. GEN marks dependency relations including possession, affiliation, and part–whole relations. DAT marks an affected personal domain. LOC marks general spatial reference, CONT marks bounded containment or inclusion, POS marks contact/configuration/position, and INS/COM marks instrumental or associative/comitative relations.
+
+**Conditions:** The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class remain **UNSPECIFIED**. Differential marking conditions and the segmental forms of case suffixes remain **UNSPECIFIED**.
+
+**Depends on:** G-SYN-002 G-SYN-003
+
+### G-MORPH-007 — Nominal inflection template
+
+**Statement:** The nominal template is `NOUN-(NUMBER)-(GEN)-CASE`, with number optional.
+
+**Conditions:** GEN may occur as the sole case marker or as an inner case before an eligible outer case under G-MORPH-008. The inventory and forms of number marking remain **UNSPECIFIED**.
+
+### G-MORPH-008 — Restricted genitive case stacking
+
+**Statement:** GEN is the only case that productively stacks. It may precede DAT, LOC, CONT, POS, or INS/COM, yielding an inner dependency relation plus an outer clausal or semantic relation.
+
+**Conditions:** GEN does not stack with ABS or ERG, and DAT, LOC, CONT, POS, and INS/COM do not productively stack with one another.
+
+**Depends on:** G-MORPH-006 G-MORPH-007
 
 ### Pronominal and deictic systems
 
@@ -155,7 +175,59 @@ Person, number, clusivity, deixis, and any pronominally restricted alignment or 
 
 ### Verbal morphology
 
-The inventory and ordering of verbal categories, argument-indexing exponence, TAM categories, and valency-changing affixes are **UNSPECIFIED**.
+### G-MORPH-009 — Verbal morphology template
+
+**Statement:** The verbal template is `DIRECTIONAL-OBJ/PAT-ROOT-AUX/APP-SUBJ/AGT-TENSE-ASPECT`.
+
+**Conditions:** The segmental forms and distribution of OBJ/PAT and SUBJ/AGT indexing and the auxiliary inventory are **UNSPECIFIED**. Applicative morphology occupies the AUX/APP slot as specified below.
+
+### G-MORPH-010 — Directional prefixes
+
+**Statement:** The directional prefixes are `i-` positive/convergent, `a-` negative/divergent, and zero for neutral directionality. Their basic contrast is path-like convergence versus stable relation versus divergence; conventionalized abstract relational extensions are permitted by G-MORPH-011.
+
+**Conditions:** DAT, LOC, CONT, POS, and INS/COM productively participate in the three-way directional system. GEN participates only in the lexically and semantically restricted environments specified by G-MORPH-011. ABS and ERG do not themselves license directional relational readings.
+
+### G-MORPH-011 — Directional and case composition
+
+**Statement:** A case identifies a semantic relation and the directional specifies change along that relation: `i-` establishes, enters, approaches, or increases the relation; zero presents a stable or neutral relation; `a-` exits, departs from, dissolves, or decreases the relation.
+
+**Conditions:** Productive interpretations are organized as follows.
+
+| Case | `i-` convergent | zero neutral | `a-` divergent |
+| --- | --- | --- | --- |
+| DAT | acquisition, receipt, benefit, increased affected involvement | recipient, beneficiary, experiencer, stable affected relation | loss, deprivation, withdrawal, decreased affected involvement |
+| LOC | approach or arrival at a general spatial reference | at/near a reference location | departure or movement away from a reference |
+| CONT | entry or placement into bounded inclusion | containment/inclusion | exit or removal from bounded inclusion |
+| POS | assuming or causing a contact/configurational position | maintaining contact/configuration/position | leaving or removing from contact/configuration/position |
+| INS/COM | association, joining, attachment, taking up as a means | accompaniment, association, instrument/means | dissociation, separation, detachment, cessation of use |
+
+CONT may extend conventionally from physical containment to bounded abstract domains such as membership or states. POS may extend from literal support/contact to attachment, posture, or other lexically licensed configurations. Whether DAT productively extends further to possession, allegiance, or transfer of control is **UNSPECIFIED**.
+
+GEN is exceptional: with predicates whose lexical semantics permit change in a genitive dependency relation, `i-` may establish belonging/dependency, zero may maintain it, and `a-` may dissolve it. Ordinary adnominal GEN is not directionally reinterpreted. The lexical classes licensing directional GEN remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-006 G-MORPH-010
+
+### G-MORPH-012 — Tense and aspect suffixes
+
+**Statement:** Tense follows subject/agent indexing and precedes aspect. `-i` marks nonpast and `-a` marks past. Zero aspect marks imperfective and `-n` marks perfective.
+
+**Conditions:** The semantic boundaries of past versus nonpast and perfective versus imperfective, including any interaction with lexical aspect, remain **UNSPECIFIED**.
+
+### G-MORPH-013 — Two applicative classes
+
+**Statement:** Minitongue has two productive applicative classes. An affected applicative promotes a DAT participant. A general oblique applicative promotes an INS/COM, LOC, CONT, or POS participant.
+
+**Conditions:** The segmental forms of both applicatives are **UNSPECIFIED**. GEN is not a productive applicative input. Applicatives occupy the AUX/APP position in G-MORPH-009.
+
+**Depends on:** G-MORPH-006 G-MORPH-009
+
+### G-MORPH-014 — Applicative promotion and directional interaction
+
+**Statement:** An applied participant becomes an ABS core object and is eligible for OBJ/PAT indexing. When an applicative and directional target the same underlying relation, the applicative changes argument status while the directional preserves the convergent, neutral, or divergent interpretation of that relation.
+
+**Conditions:** The treatment, case, and indexing of any pre-existing basic object after applicativization, including possible double-object behavior, are **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-010 G-MORPH-011 G-MORPH-013 G-SYN-003 G-SYN-006
 
 ### Derivation and compounding
 
@@ -189,13 +261,13 @@ Internal noun-phrase order and agreement are **UNSPECIFIED**.
 
 **Statement:** Core alignment combines ergative–absolutive organization with an active–stative split. Transitive A and P are grammatically distinguished. Intransitive S arguments divide into an A-like class and a P-like class rather than forming a single uniform S category.
 
-**Conditions:** The semantic or lexical criteria assigning intransitive predicates or arguments to the two S classes, and the exact case or indexing realizations of those classes, are **UNSPECIFIED**.
+**Conditions:** Active S takes ERG and inactive S takes ABS under G-MORPH-006. The semantic or lexical criteria assigning intransitive predicates or arguments to the two S classes, and their verbal indexing realizations, remain **UNSPECIFIED**.
 
 ### G-SYN-003 — Case and verbal indexing jointly identify arguments
 
 **Statement:** Core argument identification uses both nominal case marking and verbal argument indexing.
 
-**Conditions:** Case and/or indexing may be differential according to grammatical or semantic properties, and selected pronouns or historically older constructions may preserve distinct patterns. The case inventory, indexing inventory, conditioning hierarchy, and distribution of differential marking are **UNSPECIFIED**.
+**Conditions:** The case inventory is specified by G-MORPH-006. Case and/or indexing may be differential according to grammatical or semantic properties, and selected pronouns or historically older constructions may preserve distinct patterns. The indexing inventory, conditioning hierarchy, and distribution of differential marking remain **UNSPECIFIED**.
 
 **Depends on:** G-SYN-002
 
@@ -219,7 +291,7 @@ Internal noun-phrase order and agreement are **UNSPECIFIED**.
 
 **Statement:** The grammar distinguishes intransitive, transitive, and ditransitive predicate frames and permits productive morphological operations that change valency.
 
-**Conditions:** The argument structure of ditransitives, the inventory of valency operations, and their morphological forms are **UNSPECIFIED**.
+**Conditions:** The two applicative classes are specified by G-MORPH-013–014. Ditransitive argument structure, the behavior of the pre-existing object under applicativization, and any additional valency-changing operations remain **UNSPECIFIED**.
 
 **Depends on:** G-SYN-005
 
@@ -261,6 +333,8 @@ Add only abbreviations not covered by the Leipzig standard list.
 
 | Abbreviation | Meaning | Notes |
 | --- | --- | --- |
+| CONT | containment case | Project-specific case label for bounded inclusion/containment. |
+| POS | positional case | Project-specific case label for contact/configuration/position. |
 
 ## Variation and diachrony
 
@@ -278,14 +352,15 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - the identity and behavior of stress-attracting and stress-neutral suffix classes;
 - the entire orthographic system;
 - POS inventory and all lexical entries;
-- actual affix forms, morpheme-order templates, and paradigms;
-- case inventory and the formal realization of active–stative / ergative–absolutive alignment;
+- case-suffix forms, number morphology, and complete paradigms;
 - semantic conditioning of the active–stative split;
-- verbal indexing categories and their ordering/exponence;
+- OBJ/PAT and SUBJ/AGT indexing forms, inventories, and conditioning;
+- auxiliary inventory and behavior;
 - conditioning of differential case and indexing;
+- the lexical classes licensing directional GEN and whether DAT extends productively to possession, allegiance, or transfer of control;
+- the segmental forms of the two applicatives, the treatment of a pre-existing object after applicativization, ditransitive argument structure, and any additional valency-changing operations;
 - predicate-class membership and copular distribution;
-- valency-changing morphemes and ditransitive argument structure;
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Canonical regression examples are not yet added because orthography, lexical forms, and the relevant grammatical morphemes remain **UNSPECIFIED**. Creating full examples now would require inventing canonical forms that the design survey did not establish.
+Canonical regression examples are not yet added because the lexicon remains empty and the segmental forms of case suffixes, indexing markers, and applicatives remain **UNSPECIFIED**. The directional and TAM forms are established, but complete examples would still require inventing canonical lexical and inflectional material.
