@@ -46,13 +46,15 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** Minitongue permits productive phonological alternations together with stronger or partly lexicalized alternations in selected older, frequent, or grammatical material.
 
-**Conditions:** Productive alternations include conditioned intervocalic stop weakening and limited nasal place assimilation as specified below. Their exact conditioning environments remain **UNSPECIFIED** where not stated by a dedicated rule.
+**Conditions:** Productive alternations include consonant gradation under G-PHON-009 and limited nasal place assimilation as specified below. Conditioning remains **UNSPECIFIED** only where not stated by a dedicated rule.
 
-### G-PHON-009 — Conditioned intervocalic stop weakening
+### G-PHON-009 — Productive strong–weak consonant gradation
 
-**Statement:** In licensed intervocalic environments, voiceless stops /p t k/ may voice to [b d g], and voiced stops /b d g/ may undergo further lenition.
+**Statement:** In gradating morphology, the strong grades /p t k/ alternate respectively with the weak grades /v d g/.
 
-**Conditions:** The prosodic and morphological environments that license each stage, whether both stages can apply in one derivation, and the phonetic outputs of voiced-stop lenition are **UNSPECIFIED**.
+**Conditions:** Grade is selected morphophonologically by the relevant construction or suffix class. A specified morphological grade overrides what modern surface stress or syllable weight alone would predict. Inflection is the principal productive domain; derivation normally does not trigger gradation unless an older derivational construction is explicitly specified. Older suffixes may preserve lexical grade selection, while newly established productive morphology may align grade selection with the historical stress-conditioned pattern described by G-PHON-018. The concrete suffixes and constructions selecting STRONG or WEAK grade remain **UNSPECIFIED** until their morphemes are established.
+
+**Depends on:** G-PHON-005
 
 ### G-PHON-010 — Limited nasal place assimilation
 
@@ -108,19 +110,43 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Depends on:** G-PHON-004 G-PHON-006 G-PHON-007
 
-The exact morphological domains of G-PHON-009 and G-PHON-010, and the concrete suffix classes referenced by G-PHON-005, remain **UNSPECIFIED** pending the establishment of canonical morphemes.
+### G-PHON-016 — Inherited extra-weak consonant grade
+
+**Statement:** Selected inherited morphology may preserve a third, extra-weak grade with the correspondences /p ~ v ~ ∅/, /t ~ d ~ r/, and /k ~ g ~ j/.
+
+**Conditions:** The extra-weak grade is not productively assigned to new lexemes or constructions. Its surviving forms must be established as inherited members of particular paradigms or morphological constructions. Zero grade is restricted to inherited forms in which historical /v/ deletion produced a phonotactically licensed vowel sequence. Extra-weak /j/ derived from /g/ is written ⟨ğ⟩ under G-ORTH-003.
+
+**Depends on:** G-PHON-009
+
+### G-PHON-017 — Rhotic realization
+
+**Statement:** The phoneme /r/, including /r/ that continues the inherited extra-weak coronal grade, is realized as [ɾ] intervocalically and [r] elsewhere.
+
+**Conditions:** [ɾ] is an allophone of /r/, not a separate phoneme.
+
+The exact triggering environments of G-PHON-010, the concrete suffixes selecting STRONG or WEAK under G-PHON-009, the inventory of inherited constructions preserving G-PHON-016, and the concrete suffix classes referenced by G-PHON-005 remain **UNSPECIFIED** pending the establishment of canonical morphemes and lexemes.
 
 ## Orthography
 
 ### G-ORTH-001 — Palatal glide spelling
 
-**Statement:** The phoneme /j/ is written ⟨y⟩.
+**Statement:** The phoneme /j/ is normally written ⟨y⟩.
+
+**Exceptions:** /j/ that is the inherited extra-weak grade of /g/ is written ⟨ğ⟩ under G-ORTH-003.
 
 ### G-ORTH-002 — Alveolo-palatal fricative spelling
 
 **Statement:** The phoneme /ɕ/ is written ⟨c⟩. Consequently, /ɕi/ is written ⟨ci⟩.
 
-**Conditions:** All other grapheme-to-phoneme correspondences, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
+**Conditions:** All other grapheme-to-phoneme correspondences beyond G-ORTH-001–003, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
+
+### G-ORTH-003 — Historical velar glide spelling
+
+**Statement:** /j/ that continues the inherited extra-weak grade of /g/ is written ⟨ğ⟩, yielding the morphophonemic orthographic correspondence ⟨k⟩ ~ ⟨g⟩ ~ ⟨ğ⟩.
+
+**Conditions:** ⟨ğ⟩ does not represent a phoneme distinct from /j/; ordinary /j/ remains ⟨y⟩ under G-ORTH-001.
+
+**Depends on:** G-PHON-016 G-ORTH-001
 
 ## Morphology
 
@@ -134,7 +160,7 @@ The exact morphological domains of G-PHON-009 and G-PHON-010, and the concrete s
 
 **Statement:** Affixation is the primary productive morphological mechanism. Compounding is also a major productive strategy for lexical word formation.
 
-**Conditions:** The use of clitics, reduplication, and productive stem alternation is **UNSPECIFIED**.
+**Conditions:** The use of clitics and reduplication is **UNSPECIFIED**. Productive stem alternation includes the strong–weak consonant gradation specified by G-PHON-009.
 
 ### G-MORPH-003 — Predominantly suffixing directionality
 
@@ -308,17 +334,58 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Conditions:** Proto *p not targeted by a word-edge law remains /p/, including *p that is word-medial because of surrounding morphological material. The ordering of G-PHON-015 relative to G-PHON-012–014 is not contrastive in the currently specified environments. Whether any resulting /h ~ p ~ s/ or /k ~ ɕ/, /t ~ ɕ/ alternations are synchronically productive is **UNSPECIFIED**.
 
+### G-PHON-018 — Historical stress-conditioned strong–weak gradation
+
+**Statement:** In eligible stem-internal intervocalic position, proto *p, *t, and *k retained their strong stop grade before a stressed vowel and developed the weak grades /v d g/ before an unstressed vowel.
+
+**Historical paths:** *p > *b > *β > /v/; *t > /d/; *k > /g/ in the weak environment. Strong *p, *t, and *k were retained.
+
+**Conditions:** This stress-conditioned distribution is the historical source of modern G-PHON-009. Subsequent morphological reanalysis made construction- or suffix-selected grade primary synchronically. The word-edge *p changes in G-PHON-013–015 occupy separate environments.
+
+**Ordering:** G-PHON-012 precedes this gradation, so proto *ki and *ti undergo the older pre-/i/ merger before surviving velars and coronals participate in gradation.
+
+**Depends on:** G-PHON-012
+
+### G-PHON-019 — Historical extra-weak labial deletion
+
+**Statement:** In selected older morphology, weak-grade /v/ in an unstressed intervocalic environment could delete, producing the extra-weak labial grade ∅.
+
+**Conditions:** Deletion applied only where the resulting vowel sequence was licensed by the phonotactics of the relevant historical stage; otherwise /v/ was retained. The modern zero grade is inherited and nonproductive under G-PHON-016.
+
+**Depends on:** G-PHON-016 G-PHON-018
+
+### G-PHON-020 — Historical extra-weak coronal rhotacism
+
+**Statement:** In selected older morphology, weak-grade /d/ underwent further intervocalic lenition through *[ð̞] and *[ɾ], after which the tap merged phonemically with /r/.
+
+**Historical path:** *d > *[ð̞] > *[ɾ] > /r/.
+
+**Conditions:** The resulting /r/ participates in the general modern allophony of G-PHON-017. The extra-weak coronal grade is inherited and nonproductive under G-PHON-016.
+
+**Depends on:** G-PHON-016 G-PHON-017 G-PHON-018
+
+### G-PHON-021 — Historical extra-weak velar gliding
+
+**Statement:** In selected older morphology, weak-grade /g/ underwent further palatal lenition before /i e/, ultimately yielding /j/.
+
+**Historical path:** *g > *[ɣʲ] > *[j] / _{i,e}.
+
+**Conditions:** The original front-vowel conditioning was later morphologized. In inherited modern paradigms the extra-weak /j/ may therefore occur before any vowel and is written ⟨ğ⟩ under G-ORTH-003. This grade is nonproductive under G-PHON-016.
+
+**Ordering:** G-PHON-012 precedes G-PHON-018 and this change; ordinary proto *ki therefore undergoes the earlier *ki/*ti > /ɕi/ merger rather than first becoming *gi or /j/. Any lexical exception must be separately established.
+
+**Depends on:** G-PHON-012 G-PHON-016 G-PHON-018 G-ORTH-003
+
 ## Open questions
 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
 
 - onset distribution beyond the explicit coda exclusions and /h ɕ j/ onset-only restriction;
 - whether non-diphthong vowel sequences may occur lexically, and the sequence-specific outputs of vowel repair;
-- the exact prosodic and morphological environments and phonetic outputs of intervocalic stop weakening;
 - the exact triggering environments and outputs of nasal place assimilation;
 - the segment-specific mappings used by assimilation, fusion/contraction, and deletion in morpheme-boundary repair;
 - the identity and behavior of stress-attracting and stress-neutral suffix classes;
-- all orthographic correspondences except /j/ ⟨y⟩ and /ɕ/ ⟨c⟩, plus capitalization, punctuation, and word division;
+- all orthographic correspondences except ordinary /j/ ⟨y⟩, inherited extra-weak /j/ < *g ⟨ğ⟩, and /ɕ/ ⟨c⟩, plus capitalization, punctuation, and word division;
 - POS inventory and all lexical entries;
 - actual affix forms, morpheme-order templates, and paradigms;
 - case inventory and the formal realization of active–stative / ergative–absolutive alignment;
