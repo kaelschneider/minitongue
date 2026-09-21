@@ -451,7 +451,7 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Conditions:** This stress-conditioned distribution is the historical source of modern G-PHON-009. Subsequent morphological reanalysis made construction- or suffix-selected grade primary synchronically. The word-edge *p changes in G-PHON-013–015 occupy separate environments.
 
-**Ordering:** G-PHON-012 precedes this gradation, so proto *ki and *ti undergo the older pre-/i/ merger before surviving velars and coronals participate in gradation.
+**Ordering:** G-PHON-012 precedes this gradation, so eligible proto *ki and *ti sequences undergo their conditioned pre-/i/ palatalization outcomes before surviving velars and coronals participate in gradation.
 
 **Depends on:** G-PHON-012
 
@@ -481,7 +481,7 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Conditions:** The original front-vowel conditioning was later morphologized. In inherited modern paradigms the extra-weak /j/ may therefore occur before any vowel and is written ⟨ğ⟩ under G-ORTH-003. This grade is nonproductive under G-PHON-016.
 
-**Ordering:** G-PHON-012 precedes G-PHON-018 and this change; ordinary proto *ki therefore undergoes the earlier *ki/*ti > /ɕi/ merger rather than first becoming *gi or /j/. Any lexical exception must be separately established.
+**Ordering:** G-PHON-012 precedes G-PHON-018 and this change; ordinary proto *ki therefore undergoes the earlier palatalization specified by G-PHON-012 rather than first becoming *gi or /j/. Proto *ti follows the open/closed-syllable outcomes of G-PHON-012. Any lexical exception must be separately established.
 
 **Depends on:** G-PHON-012 G-PHON-016 G-PHON-018 G-ORTH-003
 
@@ -505,7 +505,7 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Conditions:** The 1=3 merger is the combined result of phonetic convergence and paradigm analogy rather than a fully regular general sound law. The exact intermediate phonetic realization of the lenited velar before analogical leveling is **UNSPECIFIED**. Geminates created by G-PHON-022 do not participate, preserving ASSERT.PAST -kka, -tta, and -ppa.
 
-**Depends on:** G-PHON-018 G-PHON-022 G-MORPH-007
+**Depends on:** G-PHON-018 G-PHON-022
 
 ## Open questions
 
