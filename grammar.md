@@ -385,7 +385,7 @@ Information-structure rules governing constituent-order flexibility and argument
 
 ## Lexical conventions
 
-No canonical lexical classes or lexical entries have yet been established beyond the structural categories described above.
+The inherited semantic-primal root class is established morphologically under G-MORPH-006. Canonical lexical entries in `lexicon.tsv`, the full membership of that class, and broader lexical/POS classification remain **UNSPECIFIED** unless separately established.
 
 ## Glossing conventions
 
@@ -441,7 +441,7 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Historical path:** *p > *ɸ > /h/ / #_.
 
-**Conditions:** Proto *p not targeted by a word-edge law remains /p/, including *p that is word-medial because of surrounding morphological material. The ordering of G-PHON-015 relative to G-PHON-012–014 is not contrastive in the currently specified environments. Whether any resulting /h ~ p ~ s/ or /k ~ ɕ/, /t ~ ɕ/ alternations are synchronically productive is **UNSPECIFIED**.
+**Conditions:** Proto *p not targeted by a word-edge law remains /p/, including *p that is word-medial because of surrounding morphological material. The ordering of G-PHON-015 relative to G-PHON-012–014 is not contrastive in the currently specified environments. Whether any resulting /h ~ p ~ s/, /k ~ ɕ/, or /t ~ tɕ ~ ɕ/ alternations outside the established inherited semantic-primal forms are synchronically productive is **UNSPECIFIED**.
 
 ### G-PHON-018 — Historical stress-conditioned strong–weak gradation
 
