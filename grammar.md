@@ -34,11 +34,11 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** The vowel phoneme inventory is /i e a u/.
 
-### G-PHON-002 — Consonant inventory architecture
+### G-PHON-002 — Consonant inventory
 
-**Statement:** The consonant system contains approximately 10–14 phonemes and uses a voiced-versus-voiceless distinction as a principal contrast among obstruents.
+**Statement:** The consonant phoneme inventory is /p b t d k g h s ɕ v m n r j/.
 
-**Conditions:** The exact consonant phonemes, the extent of the voicing series, and any additional place or manner contrasts are **UNSPECIFIED**.
+**Conditions:** The oral stops form three voiced–voiceless pairs, /p b t d k g/. The fricatives are /h s ɕ v/; /s ɕ/ form the sibilant contrast and /v/ has no voiceless phonemic counterpart. The remaining consonants are /m n r j/.
 
 ### Allophony
 
@@ -46,7 +46,19 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** Minitongue permits productive phonological alternations together with stronger or partly lexicalized alternations in selected older, frequent, or grammatical material.
 
-**Conditions:** The actual alternations, their environments, and their lexical domains are **UNSPECIFIED**.
+**Conditions:** Productive alternations include conditioned intervocalic stop weakening and limited nasal place assimilation as specified below. Their exact conditioning environments remain **UNSPECIFIED** where not stated by a dedicated rule.
+
+### G-PHON-009 — Conditioned intervocalic stop weakening
+
+**Statement:** In licensed intervocalic environments, voiceless stops /p t k/ may voice to [b d g], and voiced stops /b d g/ may undergo further lenition.
+
+**Conditions:** The prosodic and morphological environments that license each stage, whether both stages can apply in one derivation, and the phonetic outputs of voiced-stop lenition are **UNSPECIFIED**.
+
+### G-PHON-010 — Limited nasal place assimilation
+
+**Statement:** /m n/ may assimilate in place of articulation before a following consonant, but assimilation is limited rather than automatic in every preconsonantal environment.
+
+**Conditions:** The consonants and morphological or prosodic domains that trigger assimilation, and the resulting phonetic outputs, are **UNSPECIFIED**.
 
 ### Phonotactics
 
@@ -54,19 +66,49 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** Canonical syllables have the shape `(C)V(C)`. Consonant clusters are not permitted within a syllable.
 
-**Conditions:** The permitted onset and coda consonants and cross-morpheme repair strategies are **UNSPECIFIED**.
+**Conditions:** A nucleus may contain one vowel phoneme or one canonical diphthong. Onset distribution beyond the explicitly restricted consonants is **UNSPECIFIED**.
+
+### G-PHON-006 — Diphthong inventory
+
+**Statement:** The canonical diphthongs are /ai ei ui/.
+
+**Conditions:** These diphthongs constitute single heavy syllable nuclei for stress. The lexical status of other vowel sequences and their sequence-specific repair outputs are **UNSPECIFIED**; illicit vowel sequences created by morphology are subject to G-PHON-011.
+
+### G-PHON-007 — Position-sensitive coda inventory
+
+**Statement:** Medial codas permit /p b t d k g m n r s/. Word-final codas permit /t k n r s/. No other consonants occur in coda position.
+
+**Depends on:** G-PHON-004
+
+### G-PHON-008 — Onset-only consonants
+
+**Statement:** /h ɕ j/ occur only in onset position and are prohibited in codas. /j/ occurs only before a vowel.
+
+**Conditions:** Because G-PHON-007 exhaustively defines coda inventories, /v/ is also excluded from codas. Further restrictions on word-initial versus word-medial onsets are **UNSPECIFIED**.
+
+**Depends on:** G-PHON-004 G-PHON-007
 
 ### Prosody
 
 ### G-PHON-005 — Weight-sensitive stress
 
-**Statement:** Stress assignment is sensitive to syllable weight and uses a regular fallback when no syllable satisfies the relevant weight condition.
+**Statement:** Closed syllables and syllables containing /ai ei ui/ are heavy. Stress falls on the penultimate syllable by default; a heavy final syllable attracts final stress.
 
-**Conditions:** The definition of syllable weight, direction of stress computation, and fallback position are **UNSPECIFIED**.
+**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The membership and behavior of those suffix classes are **UNSPECIFIED** until the relevant morphology is established.
+
+**Depends on:** G-PHON-006 G-PHON-007
 
 ## Morphophonology
 
-The interaction between suffixation and the no-cluster phonotactic constraint is **UNSPECIFIED**. In particular, Minitongue has not yet established whether potentially illicit cross-morpheme consonant sequences are avoided lexically or repaired by epenthesis, deletion, assimilation, allomorphy, or another process.
+### G-PHON-011 — Morpheme-boundary repair hierarchy
+
+**Statement:** When suffixation creates an illicit consonant or vowel sequence, the default repair priority is assimilation > fusion/contraction > deletion. The highest-ranked available process that yields a phonotactically legal output applies.
+
+**Conditions:** The segment combinations targeted by each process, the direction and features of assimilation, the outputs of fusion/contraction, and deletion targets are **UNSPECIFIED**. Epenthesis is not part of the default repair hierarchy.
+
+**Depends on:** G-PHON-004 G-PHON-006 G-PHON-007
+
+The exact morphological domains of G-PHON-009 and G-PHON-010, and the concrete suffix classes referenced by G-PHON-005, remain **UNSPECIFIED** pending the establishment of canonical morphemes.
 
 ## Orthography
 
@@ -226,13 +268,14 @@ Diachrony is modeled selectively. Explicit historical developments may be added 
 
 ## Open questions
 
-The following matters remain **UNSPECIFIED** after design phases 0–3:
+The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
 
-- exact consonant inventory and distribution;
-- onset/coda restrictions and all phonotactic sequencing constraints beyond `(C)V(C)`;
-- syllable-weight definition, stress direction, and fallback stress;
-- concrete allophonic and morphophonological processes;
-- repair of consonant sequences created by suffixation;
+- onset distribution beyond the explicit coda exclusions and /h ɕ j/ onset-only restriction;
+- whether non-diphthong vowel sequences may occur lexically, and the sequence-specific outputs of vowel repair;
+- the exact prosodic and morphological environments and phonetic outputs of intervocalic stop weakening;
+- the exact triggering environments and outputs of nasal place assimilation;
+- the segment-specific mappings used by assimilation, fusion/contraction, and deletion in morpheme-boundary repair;
+- the identity and behavior of stress-attracting and stress-neutral suffix classes;
 - the entire orthographic system;
 - POS inventory and all lexical entries;
 - actual affix forms, morpheme-order templates, and paradigms;
