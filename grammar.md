@@ -112,7 +112,15 @@ The exact morphological domains of G-PHON-009 and G-PHON-010, and the concrete s
 
 ## Orthography
 
-The grapheme inventory, grapheme-to-phoneme correspondences, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
+### G-ORTH-001 — Palatal glide spelling
+
+**Statement:** The phoneme /j/ is written ⟨y⟩.
+
+### G-ORTH-002 — Alveolo-palatal fricative spelling
+
+**Statement:** The phoneme /ɕ/ is written ⟨c⟩. Consequently, /ɕi/ is written ⟨ci⟩.
+
+**Conditions:** All other grapheme-to-phoneme correspondences, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
 
 ## Morphology
 
@@ -266,6 +274,40 @@ Add only abbreviations not covered by the Leipzig standard list.
 
 Diachrony is modeled selectively. Explicit historical developments may be added when they explain important structural asymmetries, irregularities, or lexicalized morphology; otherwise a plausible historical motivation may remain implicit. Historical analyses do not create synchronic exceptions unless those exceptions are separately canonized.
 
+The following sound changes are **experimental historical laws** on the `experimental` branch. They describe a proposed diachronic derivation and do not by themselves establish productive synchronic alternations.
+
+### G-PHON-012 — Pre-/i/ palatalization and merger
+
+**Statement:** Proto sequences *ki and *ti merge before /i/ through a palatalized/affricated stage and surface as modern /ɕi/, written ⟨ci⟩.
+
+**Historical path:** *ki, *ti > *tɕi > /ɕi/.
+
+**Ordering:** This change precedes G-PHON-013 and G-PHON-014, so /t/ created later from word-final *p does not feed this palatalization.
+
+**Depends on:** G-ORTH-002
+
+### G-PHON-013 — Word-final *p coronalization
+
+**Statement:** Proto *p becomes *t at the end of a phonological word.
+
+**Historical law:** *p > *t / _#.
+
+### G-PHON-014 — Word-final *t assibilation
+
+**Statement:** Word-final *t, including *t derived by G-PHON-013, becomes /s/.
+
+**Historical law:** *t > *s / _#.
+
+**Depends on:** G-PHON-013
+
+### G-PHON-015 — Word-initial *p lenition and debuccalization
+
+**Statement:** Proto *p at the beginning of a phonological word lenites through *ɸ and becomes /h/.
+
+**Historical path:** *p > *ɸ > /h/ / #_.
+
+**Conditions:** Proto *p not targeted by a word-edge law remains /p/, including *p that is word-medial because of surrounding morphological material. The ordering of G-PHON-015 relative to G-PHON-012–014 is not contrastive in the currently specified environments. Whether any resulting /h ~ p ~ s/ or /k ~ ɕ/, /t ~ ɕ/ alternations are synchronically productive is **UNSPECIFIED**.
+
 ## Open questions
 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
@@ -276,7 +318,7 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - the exact triggering environments and outputs of nasal place assimilation;
 - the segment-specific mappings used by assimilation, fusion/contraction, and deletion in morpheme-boundary repair;
 - the identity and behavior of stress-attracting and stress-neutral suffix classes;
-- the entire orthographic system;
+- all orthographic correspondences except /j/ ⟨y⟩ and /ɕ/ ⟨c⟩, plus capitalization, punctuation, and word division;
 - POS inventory and all lexical entries;
 - actual affix forms, morpheme-order templates, and paradigms;
 - case inventory and the formal realization of active–stative / ergative–absolutive alignment;
