@@ -56,11 +56,13 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Depends on:** G-PHON-005
 
-### G-PHON-010 — Limited nasal place assimilation
+### G-PHON-010 — Nasal place assimilation
 
-**Statement:** /m n/ may assimilate in place of articulation before a following consonant, but assimilation is limited rather than automatic in every preconsonantal environment.
+**Statement:** /n/ assimilates in place to an immediately following place-bearing consonant, both within a morpheme and across a morpheme boundary.
 
-**Conditions:** The consonants and morphological or prosodic domains that trigger assimilation, and the resulting phonetic outputs, are **UNSPECIFIED**.
+**Outputs:** Before labial consonants, /n/ surfaces as [m]; before coronal consonants, it surfaces as [n]; before dorsal or palatal consonants, it surfaces as [ŋ]. These are conditioned surface realizations of /n/ and do not add /ŋ/ to the phoneme inventory.
+
+**Conditions:** The output before placeless /h/ is **UNSPECIFIED**. Underlying /m/ is not subject to this rule.
 
 ### Phonotactics
 
@@ -68,13 +70,13 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** Canonical syllables have the shape `(C)V(C)`. Consonant clusters are not permitted within a syllable.
 
-**Conditions:** A nucleus may contain one vowel phoneme or one canonical diphthong. Onset distribution beyond the explicitly restricted consonants is **UNSPECIFIED**.
+**Conditions:** A nucleus may contain one vowel phoneme or one canonical diphthong. Every consonant phoneme is licensed in onset position; there are no additional general restrictions distinguishing word-initial from word-medial onsets.
 
-### G-PHON-006 — Diphthong inventory
+### G-PHON-006 — Diphthong inventory and lexical vowel sequences
 
-**Statement:** The canonical diphthongs are /ai ei ui/.
+**Statement:** The canonical diphthongs are /ai ei ui/. Other vowel sequences are prohibited within lexical roots.
 
-**Conditions:** These diphthongs constitute single heavy syllable nuclei for stress. The lexical status of other vowel sequences and their sequence-specific repair outputs are **UNSPECIFIED**; illicit vowel sequences created by morphology are subject to G-PHON-011.
+**Conditions:** The canonical diphthongs constitute single heavy syllable nuclei for stress. When morphology creates a non-diphthong vowel sequence, the sequence is repaired by contraction/fusion under G-PHON-011. Contraction is sequence-specific: no single vowel-dominance rule applies. The explicit output mapping for each ordered pair of /i e a u/ remains **UNSPECIFIED**.
 
 ### G-PHON-007 — Position-sensitive coda inventory
 
@@ -86,29 +88,31 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** /h ɕ j/ occur only in onset position and are prohibited in codas. /j/ occurs only before a vowel.
 
-**Conditions:** Because G-PHON-007 exhaustively defines coda inventories, /v/ is also excluded from codas. Further restrictions on word-initial versus word-medial onsets are **UNSPECIFIED**.
+**Conditions:** Because G-PHON-007 exhaustively defines coda inventories, /v/ is also excluded from codas. All consonant phonemes are otherwise licensed as onsets both word-initially and word-medially.
 
 **Depends on:** G-PHON-004 G-PHON-007
 
 ### Prosody
 
-### G-PHON-005 — Weight-sensitive stress
+### G-PHON-005 — Weight-sensitive stress and suffix stress classes
 
 **Statement:** Closed syllables and syllables containing /ai ei ui/ are heavy. Stress falls on the penultimate syllable by default; a heavy final syllable attracts final stress.
 
-**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The membership and behavior of those suffix classes are **UNSPECIFIED** until the relevant morphology is established.
+**Suffix classes:** Suffixes belong to one of three prosodic classes when established: (1) stress-neutral suffixes do not alter the stem's stress domain; (2) self-stressing suffixes bear stress themselves; and (3) pre-stressing suffixes assign stress to the immediately preceding stem syllable.
 
-**Depends on:** G-PHON-006 G-PHON-007
+**Gradation interaction:** The three-way stress classification is compatible with the historical source of G-PHON-009: self-stressing suffixes naturally align with WEAK grade and pre-stressing suffixes with STRONG grade in newly established productive morphology. Synchronically, however, grade is selected morphologically under G-PHON-009 rather than recalculated from surface stress. Stress-neutral suffixes do not by themselves determine grade. The actual suffix membership of each stress class and each suffix's grade selection remain **UNSPECIFIED** until the morphemes are established.
+
+**Depends on:** G-PHON-006 G-PHON-007 G-PHON-009
 
 ## Morphophonology
 
 ### G-PHON-011 — Morpheme-boundary repair hierarchy
 
-**Statement:** When suffixation creates an illicit consonant or vowel sequence, the default repair priority is assimilation > fusion/contraction > deletion. The highest-ranked available process that yields a phonotactically legal output applies.
+**Statement:** When suffixation creates an illicit consonant or vowel sequence, repair applies in the ordered hierarchy assimilation > fusion/contraction > deletion. The highest-ranked available process that yields a phonotactically legal output applies. Epenthesis is not part of the default hierarchy.
 
-**Conditions:** The segment combinations targeted by each process, the direction and features of assimilation, the outputs of fusion/contraction, and deletion targets are **UNSPECIFIED**. Epenthesis is not part of the default repair hierarchy.
+**Conditions:** Nasal assimilation uses the mappings in G-PHON-010. Illicit non-diphthong vowel sequences use sequence-specific contraction/fusion rather than a general deletion or vowel-dominance rule. The explicit contraction table for ordered vowel pairs, the non-nasal consonant pairs that undergo assimilation or fusion, their outputs, and the deletion target for otherwise unrepaired sequences remain **UNSPECIFIED**.
 
-**Depends on:** G-PHON-004 G-PHON-006 G-PHON-007
+**Depends on:** G-PHON-004 G-PHON-006 G-PHON-007 G-PHON-010
 
 ### G-PHON-016 — Inherited extra-weak consonant grade
 
@@ -124,7 +128,7 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Conditions:** [ɾ] is an allophone of /r/, not a separate phoneme.
 
-The exact triggering environments of G-PHON-010, the concrete suffixes selecting STRONG or WEAK under G-PHON-009, the inventory of inherited constructions preserving G-PHON-016, and the concrete suffix classes referenced by G-PHON-005 remain **UNSPECIFIED** pending the establishment of canonical morphemes and lexemes.
+The output of G-PHON-010 before /h/, the concrete suffixes selecting STRONG or WEAK under G-PHON-009, the inventory of inherited constructions preserving G-PHON-016, the membership of the three stress classes in G-PHON-005, and the remaining segment-specific repair mappings in G-PHON-011 remain **UNSPECIFIED** pending the establishment of canonical morphemes and lexemes.
 
 ## Orthography
 
@@ -138,8 +142,6 @@ The exact triggering environments of G-PHON-010, the concrete suffixes selecting
 
 **Statement:** The phoneme /ɕ/ is written ⟨c⟩. Consequently, /ɕi/ is written ⟨ci⟩.
 
-**Conditions:** All other grapheme-to-phoneme correspondences beyond G-ORTH-001–003, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
-
 ### G-ORTH-003 — Historical velar glide spelling
 
 **Statement:** /j/ that continues the inherited extra-weak grade of /g/ is written ⟨ğ⟩, yielding the morphophonemic orthographic correspondence ⟨k⟩ ~ ⟨g⟩ ~ ⟨ğ⟩.
@@ -147,6 +149,41 @@ The exact triggering environments of G-PHON-010, the concrete suffixes selecting
 **Conditions:** ⟨ğ⟩ does not represent a phoneme distinct from /j/; ordinary /j/ remains ⟨y⟩ under G-ORTH-001.
 
 **Depends on:** G-PHON-016 G-ORTH-001
+
+### G-ORTH-004 — Transparent phonemic spelling
+
+**Statement:** Outside the explicitly historical ⟨ğ⟩ spelling in G-ORTH-003, the orthography is maximally transparent and uses one grapheme per phoneme wherever the established Latin inventory permits.
+
+| Phoneme | Grapheme |
+| --- | --- |
+| /i/ | ⟨i⟩ |
+| /e/ | ⟨e⟩ |
+| /a/ | ⟨a⟩ |
+| /u/ | ⟨u⟩ |
+| /p/ | ⟨p⟩ |
+| /b/ | ⟨b⟩ |
+| /t/ | ⟨t⟩ |
+| /d/ | ⟨d⟩ |
+| /k/ | ⟨k⟩ |
+| /g/ | ⟨g⟩ |
+| /h/ | ⟨h⟩ |
+| /s/ | ⟨s⟩ |
+| /ɕ/ | ⟨c⟩ |
+| /v/ | ⟨v⟩ |
+| /m/ | ⟨m⟩ |
+| /n/ | ⟨n⟩ |
+| /r/ | ⟨r⟩ |
+| /j/ | ⟨y⟩ |
+
+**Conditions:** G-ORTH-001–003 override the general table where applicable. Conditioned phonetic realizations such as [ɾ] and [ŋ] do not receive separate graphemes.
+
+**Depends on:** G-PHON-001 G-PHON-002 G-ORTH-001 G-ORTH-002 G-ORTH-003
+
+### G-ORTH-005 — Capitalization, punctuation, and word division
+
+**Statement:** Orthographic sentences capitalize the sentence-initial word and proper names. Conventional modern punctuation is used. Independent grammatical words are separated by spaces, while affixes are written attached to their hosts.
+
+**Conditions:** Specialized conventions for compounds and any future clitic classes remain **UNSPECIFIED** until those constructions are established.
 
 ## Morphology
 
@@ -380,12 +417,11 @@ The following sound changes are **experimental historical laws** on the `experim
 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
 
-- onset distribution beyond the explicit coda exclusions and /h ɕ j/ onset-only restriction;
-- whether non-diphthong vowel sequences may occur lexically, and the sequence-specific outputs of vowel repair;
-- the exact triggering environments and outputs of nasal place assimilation;
-- the segment-specific mappings used by assimilation, fusion/contraction, and deletion in morpheme-boundary repair;
-- the identity and behavior of stress-attracting and stress-neutral suffix classes;
-- all orthographic correspondences except ordinary /j/ ⟨y⟩, inherited extra-weak /j/ < *g ⟨ğ⟩, and /ɕ/ ⟨c⟩, plus capitalization, punctuation, and word division;
+- the explicit sequence-specific contraction outputs for morphologically created non-diphthong vowel pairs;
+- the output of nasal place assimilation before placeless /h/;
+- the non-nasal segment-specific mappings used by assimilation and fusion/contraction, and the deletion target used as last-resort morpheme-boundary repair;
+- the membership of actual suffixes in the neutral, self-stressing, and pre-stressing classes, and their construction-specific STRONG/WEAK grade selection;
+- specialized word-division conventions for compounds and any future clitic classes;
 - POS inventory and all lexical entries;
 - actual affix forms, morpheme-order templates, and paradigms;
 - case inventory and the formal realization of active–stative / ergative–absolutive alignment;
@@ -397,4 +433,4 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Canonical regression examples are not yet added because orthography, lexical forms, and the relevant grammatical morphemes remain **UNSPECIFIED**. Creating full examples now would require inventing canonical forms that the design survey did not establish.
+Canonical regression examples are not yet added because lexical forms and the relevant grammatical morphemes remain **UNSPECIFIED**. Creating full examples now would require inventing canonical forms that the design survey did not establish.
