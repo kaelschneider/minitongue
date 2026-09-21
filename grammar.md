@@ -138,9 +138,11 @@ The output of G-PHON-010 before /h/, the concrete suffixes selecting STRONG or W
 
 **Exceptions:** /j/ that is the inherited extra-weak grade of /g/ is written ⟨ğ⟩ under G-ORTH-003.
 
-### G-ORTH-002 — Alveolo-palatal fricative spelling
+### G-ORTH-002 — Alveolo-palatal spelling
 
 **Statement:** The phoneme /ɕ/ is written ⟨c⟩. Consequently, /ɕi/ is written ⟨ci⟩.
+
+**Inherited inflectional exception:** In the semantic-primal conjugation, historical 2.NONPAST *-ti is also written ⟨ci⟩. It is pronounced [tɕi] when it heads an open syllable and [ɕi] when the syllable is closed under G-PHON-012. This is an inherited morphophonemic spelling and does not add /tɕ/ to the phoneme inventory.
 
 ### G-ORTH-003 — Historical velar glide spelling
 
@@ -175,7 +177,7 @@ The output of G-PHON-010 before /h/, the concrete suffixes selecting STRONG or W
 | /r/ | ⟨r⟩ |
 | /j/ | ⟨y⟩ |
 
-**Conditions:** G-ORTH-001–003 override the general table where applicable. Conditioned phonetic realizations such as [ɾ] and [ŋ] do not receive separate graphemes.
+**Conditions:** G-ORTH-001–003 override the general table where applicable. Conditioned phonetic realizations such as [ɾ] and [ŋ] do not receive separate graphemes. The inherited ⟨ci⟩ spelling of open-syllable 2.NONPAST [tɕi] under G-ORTH-002 is an additional morphophonemic exception to strict phonemic transparency.
 
 **Depends on:** G-PHON-001 G-PHON-002 G-ORTH-001 G-ORTH-002 G-ORTH-003
 
@@ -226,7 +228,56 @@ Person, number, clusivity, deixis, and any pronominally restricted alignment or 
 
 ### Verbal morphology
 
-The inventory and ordering of verbal categories, argument-indexing exponence, TAM categories, and valency-changing affixes are **UNSPECIFIED**.
+### G-MORPH-006 — Semantic-primal vowel-grade stems
+
+**Statement:** The inherited semantic-primal root class forms stems by combining a consonantal root with one of four vowel grades.
+
+| Grade vowel | Value | Example with *h SAY |
+| --- | --- | --- |
+| /a/ | NONFINITE | ha ‘to say’ |
+| /u/ | REALIS | hu- |
+| /i/ | IRREALIS | hi- |
+| /e/ | LINKING | he- |
+
+**Conditions:** The established test roots include *h SAY/UTTER and *r MOVE/TURN; thus ra is the nonfinite ‘to go’. The broader lexical inventory of the semantic-primal class is not enumerated here. The exact constructional distribution of the NONFINITE, IRREALIS, and LINKING grades beyond the values stated above remains **UNSPECIFIED**.
+
+### G-MORPH-007 — Inherited semantic-primal person–tense template
+
+**Statement:** Finite REALIS forms of the inherited semantic-primal conjugation use the underlying template ROOT-u-(ASSERT)-PERSON-TENSE. The inherited person consonants are *-k- ‘1’, *-t- ‘2’, and *-p- ‘3’. The tense vowels are *-i NONPAST and *-a PAST.
+
+**Synchronic analysis:** Person and tense remain morphologically segmentable, but inherited sound change and analogy create fused surface allomorphs.
+
+| Person | NONPAST | PAST |
+| --- | --- | --- |
+| 1 | -ci /ɕi/ | -va /va/ |
+| 2 | -ci [tɕi] in an open syllable; /ɕi/ in a closed syllable | -da /da/ |
+| 3 | -i /i/ | -va /va/ |
+
+**Conditions:** The 1~2 NONPAST overlap reflects G-PHON-012, with [tɕ] retained for historical *-ti in open syllables. The 3.NONPAST zero-consonant outcome reflects G-PHON-019. The 1=3 PAST syncretism reflects conditioned phonetic convergence followed by analogical leveling under G-PHON-023. This conjugation is an inherited class restricted to semantic-primal roots; it is not the default conjugation of ordinary polysyllabic verbs.
+
+**Depends on:** G-MORPH-006 G-PHON-012 G-PHON-019 G-PHON-023
+
+### G-MORPH-008 — Inherited ASSERT/EMPH morphology
+
+**Statement:** An inherited assertive morpheme *-h- occupies the slot after REALIS /u/ and before the person consonant in the semantic-primal finite template. Its core synchronic function is emphatic assertion, with contextual emphatic or counterexpectational force.
+
+**Etymology:** The morpheme derives historically from *h SAY/UTTER, but the grammatical marker and lexical root are synchronically unrelated for modern speakers.
+
+**Allomorphy:** Historical intervocalic *h before *p, *t, or *k assimilated completely under G-PHON-022. In this paradigm the resulting protected geminates preserve all three person contrasts:
+
+| Person | ASSERT.NONPAST | ASSERT.PAST |
+| --- | --- | --- |
+| 1 | -kki | -kka |
+| 2 | -tti | -tta |
+| 3 | -ppi | -ppa |
+
+The geminates block the ordinary NONPAST palatalization/merger and the plain-PAST lenition/syncretism.
+
+**Conditions:** ASSERT is established here in the REALIS finite template. Its compatibility with IRREALIS, NONFINITE, or LINKING stems remains **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-007 G-PHON-022
+
+The inventory and ordering of verbal categories, argument-indexing exponence, TAM categories, and valency-changing affixes outside this inherited semantic-primal subsystem remain **UNSPECIFIED**.
 
 ### Derivation and compounding
 
@@ -238,7 +289,21 @@ The inventory and ordering of verbal categories, argument-indexing exponence, TA
 
 ### Paradigms
 
-No complete inflectional or derivational paradigms are specified yet.
+The inherited semantic-primal REALIS paradigm established by G-MORPH-007–008 includes the following SAY forms:
+
+| Underlying form | Surface form | Value |
+| --- | --- | --- |
+| *h-u-k-i | huci /ˈhuɕi/ | SAY.REAL-1-NPST |
+| *h-u-t-i | huci [ˈhutɕi] when open | SAY.REAL-2-NPST |
+| *h-u-p-i | hui /hui/ | SAY.REAL-3-NPST |
+| *h-u-k-a | huva /ˈhuva/ | SAY.REAL-1-PST |
+| *h-u-t-a | huda /ˈhuda/ | SAY.REAL-2-PST |
+| *h-u-p-a | huva /ˈhuva/ | SAY.REAL-3-PST |
+| *h-u-h-k-a | hukka [ˈhukːa] | SAY.REAL-ASSERT-1-PST |
+| *h-u-h-t-a | hutta [ˈhutːa] | SAY.REAL-ASSERT-2-PST |
+| *h-u-h-p-a | huppa [ˈhupːa] | SAY.REAL-ASSERT-3-PST |
+
+The same inherited person–tense exponents apply to other semantic-primal roots, including *r MOVE/TURN: ruci, ruci, rui in the plain NONPAST and ruva, ruda, ruva in the plain PAST.
 
 ## Syntax
 
@@ -332,6 +397,11 @@ Add only abbreviations not covered by the Leipzig standard list.
 
 | Abbreviation | Meaning | Notes |
 | --- | --- | --- |
+| ASSERT | assertive/emphatic | Core emphatic assertion; may have counterexpectational force. |
+| LNK | linking grade | Semantic-primal /e/ stem grade. |
+| NFIN | nonfinite | Semantic-primal /a/ stem grade. |
+| NPST | nonpast | Contrasts with PST in the inherited semantic-primal conjugation. |
+| REAL | realis | Semantic-primal /u/ stem grade. |
 
 ## Variation and diachrony
 
@@ -339,15 +409,17 @@ Diachrony is modeled selectively. Explicit historical developments may be added 
 
 The following sound changes are **experimental historical laws** on the `experimental` branch. They describe a proposed diachronic derivation and do not by themselves establish productive synchronic alternations.
 
-### G-PHON-012 — Pre-/i/ palatalization and merger
+### G-PHON-012 — Pre-/i/ palatalization with open-syllable coronal retention
 
-**Statement:** Proto sequences *ki and *ti merge before /i/ through a palatalized/affricated stage and surface as modern /ɕi/, written ⟨ci⟩.
+**Statement:** In inherited morphology, proto *ki palatalizes and simplifies to /ɕi/. Proto *ti palatalizes to [tɕi] and retains the affricated realization when it heads an open syllable; when the syllable is closed, it further simplifies to /ɕi/.
 
-**Historical path:** *ki, *ti > *tɕi > /ɕi/.
+**Historical paths:** *ki > *tɕi > /ɕi/; *ti > [tɕi] / open syllable; *ti > *tɕi > /ɕi/ / closed syllable.
 
-**Ordering:** This change precedes G-PHON-013 and G-PHON-014, so /t/ created later from word-final *p does not feed this palatalization.
+**Conditions:** The open-syllable [tɕi] reflex is phonologically conditioned and applies wherever this inherited *ti sequence heads an open syllable unless another established historical rule overrides it. In the semantic-primal conjugation, both 1.NONPAST /ɕi/ < *ki and 2.NONPAST [tɕi] ~ /ɕi/ < *ti are written ⟨ci⟩ under G-ORTH-002. Geminates created by G-PHON-022 are protected from this change.
 
-**Depends on:** G-ORTH-002
+**Ordering:** G-PHON-022 precedes this rule in forms containing historical intervocalic *hC. This rule otherwise precedes G-PHON-018, so eligible singleton *ki/*ti sequences undergo palatalization before surviving stops participate in gradation.
+
+**Depends on:** G-ORTH-002 G-PHON-022
 
 ### G-PHON-013 — Word-final *p coronalization
 
@@ -387,9 +459,9 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Statement:** In selected older morphology, weak-grade /v/ in an unstressed intervocalic environment could delete, producing the extra-weak labial grade ∅.
 
-**Conditions:** Deletion applied only where the resulting vowel sequence was licensed by the phonotactics of the relevant historical stage; otherwise /v/ was retained. The modern zero grade is inherited and nonproductive under G-PHON-016.
+**Conditions:** Deletion applied only where the resulting vowel sequence was licensed by the phonotactics of the relevant historical stage; otherwise /v/ was retained. In the semantic-primal conjugation, *-p-i first lenited to *-v-i and then lost /v/ after REALIS /u/ because /ui/ is a licensed nucleus, yielding 3.NONPAST -i. Corresponding deletion before PAST /a/ is blocked because /ua/ is not a canonical diphthong. The modern zero grade is inherited and nonproductive under G-PHON-016.
 
-**Depends on:** G-PHON-016 G-PHON-018
+**Depends on:** G-PHON-006 G-PHON-016 G-PHON-018
 
 ### G-PHON-020 — Historical extra-weak coronal rhotacism
 
@@ -413,6 +485,28 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Depends on:** G-PHON-012 G-PHON-016 G-PHON-018 G-ORTH-003
 
+### G-PHON-022 — Historical intervocalic *h-stop assimilation
+
+**Statement:** Historical intervocalic *h immediately before *p, *t, or *k assimilated completely to the following stop.
+
+**Historical law:** *VhCV > *VCCV, where C = *p, *t, *k.
+
+**Representation:** The resulting sequences are structurally heterosyllabic /p.p t.t k.k/ and are phonetically long [pː tː kː]; consonant length is not thereby established as an independent phonemic contrast.
+
+**Conditions:** This was a general historical intervocalic sound change, not a rule created specifically for ASSERT morphology. The inherited ASSERT construction preserves its effects particularly transparently. Resulting geminates resist the singleton palatalization and lenition processes that create the plain semantic-primal person syncretisms.
+
+**Ordering:** This rule precedes G-PHON-012 and G-PHON-018.
+
+**Depends on:** G-PHON-004
+
+### G-PHON-023 — Historical plain-PAST person convergence
+
+**Statement:** In the inherited semantic-primal REALIS PAST, the historical 1-person *-k-a and 3-person *-p-a sequences underwent conditioned lenition after /u/ and became phonetically similar enough for analogical leveling to merge both as modern -va. Historical 2-person *-t-a yields -da.
+
+**Conditions:** The 1=3 merger is the combined result of phonetic convergence and paradigm analogy rather than a fully regular general sound law. The exact intermediate phonetic realization of the lenited velar before analogical leveling is **UNSPECIFIED**. Geminates created by G-PHON-022 do not participate, preserving ASSERT.PAST -kka, -tta, and -ppa.
+
+**Depends on:** G-PHON-018 G-PHON-022 G-MORPH-007
+
 ## Open questions
 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
@@ -422,15 +516,15 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - the non-nasal segment-specific mappings used by assimilation and fusion/contraction, and the deletion target used as last-resort morpheme-boundary repair;
 - the membership of actual suffixes in the neutral, self-stressing, and pre-stressing classes, and their construction-specific STRONG/WEAK grade selection;
 - specialized word-division conventions for compounds and any future clitic classes;
-- POS inventory and all lexical entries;
-- actual affix forms, morpheme-order templates, and paradigms;
+- POS inventory and lexical entries outside the grammaticalized semantic-primal test system;
+- affix forms, morpheme-order templates, and paradigms outside G-MORPH-006–008;
 - case inventory and the formal realization of active–stative / ergative–absolutive alignment;
 - semantic conditioning of the active–stative split;
-- verbal indexing categories and their ordering/exponence;
+- verbal indexing categories and their ordering/exponence outside the inherited semantic-primal person system;
 - conditioning of differential case and indexing;
 - predicate-class membership and copular distribution;
 - valency-changing morphemes and ditransitive argument structure;
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Canonical regression examples are not yet added because lexical forms and the relevant grammatical morphemes remain **UNSPECIFIED**. Creating full examples now would require inventing canonical forms that the design survey did not establish.
+Regression examples are maintained for the established semantic-primal REALIS person–tense and ASSERT constructions. Connected-text testing remains deferred where it would require case, argument-indexing, discourse, or other constructions that are still **UNSPECIFIED**.
