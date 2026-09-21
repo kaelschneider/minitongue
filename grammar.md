@@ -56,9 +56,9 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 ### G-PHON-010 — Limited nasal place assimilation
 
-**Statement:** /m n/ may assimilate in place of articulation before a following consonant, but assimilation is limited rather than automatic in every preconsonantal environment.
+**Statement:** /m n/ may assimilate in place of articulation before a following place-bearing consonant, but assimilation is limited rather than automatic in every preconsonantal environment. Placeless /h/ does not trigger nasal place assimilation: /mh/ and /nh/ retain the nasal's underlying place.
 
-**Conditions:** The consonants and morphological or prosodic domains that trigger assimilation, and the resulting phonetic outputs, are **UNSPECIFIED**.
+**Conditions:** The place-bearing consonants and morphological or prosodic domains that trigger nasal assimilation, and the resulting outputs before those consonants, remain **UNSPECIFIED**.
 
 ### Phonotactics
 
@@ -72,7 +72,7 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** The canonical diphthongs are /ai ei ui/.
 
-**Conditions:** These diphthongs constitute single heavy syllable nuclei for stress. The lexical status of other vowel sequences and their sequence-specific repair outputs are **UNSPECIFIED**; illicit vowel sequences created by morphology are subject to G-PHON-011.
+**Conditions:** These diphthongs constitute single heavy syllable nuclei for stress. Morphologically created /ua/ is exceptionally preserved as hiatus /u.a/ under G-PHON-012. Whether non-diphthong vowel sequences, including /ua/, may occur lexically is **UNSPECIFIED**. Other morphologically created vowel sequences are repaired under G-PHON-011 and G-PHON-012.
 
 ### G-PHON-007 — Position-sensitive coda inventory
 
@@ -92,27 +92,93 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 ### G-PHON-005 — Weight-sensitive stress
 
-**Statement:** Closed syllables and syllables containing /ai ei ui/ are heavy. Stress falls on the penultimate syllable by default; a heavy final syllable attracts final stress.
+**Statement:** Closed syllables, syllables containing /ai ei ui/, and contraction products explicitly marked heavy by G-PHON-012 are heavy. Stress falls on the penultimate syllable by default; a heavy final syllable attracts final stress.
 
-**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The membership and behavior of those suffix classes are **UNSPECIFIED** until the relevant morphology is established.
+**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The membership and behavior of those suffix classes are **UNSPECIFIED** until the relevant morphology is established. Contraction-class dominance under G-PHON-012 does not by itself imply stress attraction.
 
-**Depends on:** G-PHON-006 G-PHON-007
+**Depends on:** G-PHON-006 G-PHON-007 G-PHON-012
 
 ## Morphophonology
 
 ### G-PHON-011 — Morpheme-boundary repair hierarchy
 
-**Statement:** When suffixation creates an illicit consonant or vowel sequence, the default repair priority is assimilation > fusion/contraction > deletion. The highest-ranked available process that yields a phonotactically legal output applies.
+**Statement:** When morphology creates an illicit consonant or vowel sequence, repair applies in the order assimilation > fusion/contraction > deletion. The highest-ranked available process that yields a phonotactically legal output applies. Epenthesis is not part of the default repair hierarchy.
 
-**Conditions:** The segment combinations targeted by each process, the direction and features of assimilation, the outputs of fusion/contraction, and deletion targets are **UNSPECIFIED**. Epenthesis is not part of the default repair hierarchy.
+**Conditions:** Nasal assimilation is governed by G-PHON-010; vowel repair by G-PHON-012; non-nasal consonant assimilation by G-PHON-013; consonant fusion and preservation by G-PHON-014; and last-resort deletion by G-PHON-015.
 
-**Depends on:** G-PHON-004 G-PHON-006 G-PHON-007
+**Depends on:** G-PHON-004 G-PHON-006 G-PHON-007 G-PHON-010 G-PHON-012 G-PHON-013 G-PHON-014 G-PHON-015
 
-The exact morphological domains of G-PHON-009 and G-PHON-010, and the concrete suffix classes referenced by G-PHON-005, remain **UNSPECIFIED** pending the establishment of canonical morphemes.
+### G-PHON-012 — Sequence-specific vowel repair
+
+**Statement:** Morphologically created adjacent vowels are repaired by the following sequence-specific mappings. Canonical /ai ei ui/ remain diphthongs and are not repaired.
+
+| Input | Output | Prosody/conditioning |
+| --- | --- | --- |
+| /ii/ | /i/ | contracted nucleus remains heavy |
+| /ee/ | /e/ | contracted nucleus remains heavy |
+| /aa/ | /a/ | contracted nucleus remains heavy |
+| /uu/ | /u/ | contracted nucleus remains heavy |
+| /ia/ | /ja/ | /i/ glides to /j/ |
+| /iu/ | /ju/ | /i/ glides to /j/ |
+| /eu/ | /ju/ | via /eu/ > /iu/ > /ju/ |
+| /au/ | /u/ | contracted nucleus remains heavy |
+| /ue/ | /ui/ | yields the canonical heavy diphthong /ui/ |
+| /ua/ | /u.a/ | hiatus is preserved; no contraction |
+
+The three morphologically conditioned sequences /ie ea ae/ are resolved by boundary type and suffix class:
+
+| Input | Directional prefix + root | Dominant/fusing suffix | Recessive/transparent suffix |
+| --- | --- | --- | --- |
+| /ie/ | /je/ | /e/ | /je/ |
+| /ea/ | not applicable to the established directional prefixes | /a/ | /e/ |
+| /ae/ | /e/ with retained heavy weight | /e/ with retained heavy weight | /a/ |
+
+**Conditions:** At a directional-prefix + root boundary, repair preserves the root vowel where possible: /i-e/ > /je/ and /a-e/ > heavy /e/. At a stem + suffix boundary, a dominant/fusing suffix controls the resulting vowel in /ie ea ae/, while a recessive/transparent suffix preserves the stem vowel where possible. The tense suffix layer is dominant/fusing; this classification is independent of stress attraction unless a separate prosodic rule states otherwise. Membership of other suffixes in the dominant/fusing versus recessive/transparent contraction classes remains **UNSPECIFIED**.
+
+**Depends on:** G-PHON-005 G-PHON-006 G-MORPH-010 G-MORPH-012
+
+### G-PHON-013 — Non-nasal consonant assimilation
+
+**Statement:** The default non-nasal boundary-assimilation directions are regressive voicing and progressive place: where an applicable sequence supports those features, the left consonant copies the right consonant's voicing and the right consonant copies the left consonant's place. More specific mappings below override this default.
+
+**Conditions:** For oral stop + oral stop sequences /p b t d k g/, only voicing assimilates regressively; both stops retain their places. A consonant before placeless /h/ does not assimilate to /h/. In /hC/, /h/ totally assimilates to the following consonant, producing /CC/ when that sequence can be syllabified legally. /j/ before a consonant does not assimilate and cannot survive there under G-PHON-008; it therefore proceeds to deletion if no higher-ranked repair applies.
+
+**Depends on:** G-PHON-002 G-PHON-007 G-PHON-008 G-PHON-011
+
+### G-PHON-014 — Consonant fusion and heterosyllabic preservation
+
+**Statement:** Identical consonants created by morphology or assimilation are not automatically degeminated: /CC/ is preserved heterosyllabically when the first consonant is a legal coda and the second a legal onset. Selected non-identical sequences instead undergo fusion.
+
+**Conditions:** The selected fusion mappings are:
+
+- /sɕ/ and /ɕs/ fuse to /ɕ/ before /i/, and to /s/ elsewhere.
+- /ts ds tɕ dɕ/ arising from /t d/ + /s ɕ/ surface respectively as [ts dz tɕ dʑ]. These affricates are boundary-fusion outputs, not additional phonemes.
+- In the reverse order, /s ɕ/ + /t d/ is preserved across a syllable boundary whenever phonotactics permit it. Because /ɕ/ is onset-only, /ɕt/ and /ɕd/ cannot be preserved with /ɕ/ as a coda and continue through the repair hierarchy.
+- /CC/ created by /hC/ assimilation under G-PHON-013 likewise survives if heterosyllabification is legal.
+
+**Depends on:** G-PHON-002 G-PHON-007 G-PHON-008 G-PHON-011 G-PHON-013
+
+### G-PHON-015 — Last-resort boundary deletion
+
+**Statement:** Deletion applies only when assimilation and fusion/contraction cannot yield a legal output. A segment whose positional restrictions make it structurally illegal is deleted before an unrestricted segment. If both members are equally legal, the left member of the boundary sequence—normally the stem-final segment before a suffix—is deleted, preserving the right member.
+
+**Conditions:** This makes /j/ the deletion target before a consonant, because /j/ occurs only before vowels. It likewise favors deletion of /ɕ/ or /v/ when either would otherwise have to occupy an illegal coda. If neither member has a stronger positional restriction, C₁+C₂ > C₂ as the final fallback.
+
+**Depends on:** G-PHON-007 G-PHON-008 G-PHON-011
+
+### G-PHON-016 — Syllable-conditioned reflex of inherited *-ti
+
+**Statement:** In inherited *-ti morphology, an open-syllable reflex is written `-ci` and surfaces as [-tɕi], while a reflex followed by a coda consonant is written `-ciC` and has /-ɕiC/.
+
+**Conditions:** The open-syllable [tɕ] is a surface affricate and does not add /tɕ/ to the phoneme inventory. The spelling `-ci` is established for this historical reflex in both environments; broader orthographic correspondences remain governed by the orthography section.
+
+**Depends on:** G-PHON-002 G-PHON-004 G-PHON-007 G-PHON-014
+
+The exact prosodic and morphological domains of G-PHON-009, the place-bearing triggers and outputs of G-PHON-010, the membership of non-tense suffixes in the G-PHON-012 contraction classes, and the concrete stress classes referenced by G-PHON-005 remain **UNSPECIFIED**.
 
 ## Orthography
 
-The grapheme inventory, grapheme-to-phoneme correspondences, capitalization, punctuation, and word-division rules are **UNSPECIFIED**.
+The inherited *-ti reflex specified by G-PHON-016 is written `-ci` in an open syllable and `-ciC` before a coda consonant. Beyond this established morphophonological spelling, the grapheme inventory, general grapheme-to-phoneme correspondences, capitalization, punctuation, and word-division rules remain **UNSPECIFIED**.
 
 ## Morphology
 
@@ -209,9 +275,11 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 ### G-MORPH-012 — Tense and aspect suffixes
 
-**Statement:** Tense follows subject/agent indexing and precedes aspect. `-i` marks nonpast and `-a` marks past. Zero aspect marks imperfective and `-n` marks perfective.
+**Statement:** Tense follows subject/agent indexing and precedes aspect. `-i` marks nonpast and `-a` marks past. Zero aspect marks imperfective and `-n` marks perfective. The tense suffix layer belongs to the dominant/fusing vowel-contraction class of G-PHON-012.
 
-**Conditions:** The semantic boundaries of past versus nonpast and perfective versus imperfective, including any interaction with lexical aspect, remain **UNSPECIFIED**.
+**Conditions:** Contraction-class dominance does not itself make a tense suffix stress-attracting. The semantic boundaries of past versus nonpast and perfective versus imperfective, including any interaction with lexical aspect, remain **UNSPECIFIED**.
+
+**Depends on:** G-PHON-012
 
 ### G-MORPH-013 — Two applicative classes
 
@@ -345,11 +413,11 @@ Diachrony is modeled selectively. Explicit historical developments may be added 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
 
 - onset distribution beyond the explicit coda exclusions and /h ɕ j/ onset-only restriction;
-- whether non-diphthong vowel sequences may occur lexically, and the sequence-specific outputs of vowel repair;
+- whether non-diphthong vowel sequences, including morphologically preserved /ua/, may occur lexically;
 - the exact prosodic and morphological environments and phonetic outputs of intervocalic stop weakening;
-- the exact triggering environments and outputs of nasal place assimilation;
-- the segment-specific mappings used by assimilation, fusion/contraction, and deletion in morpheme-boundary repair;
-- the identity and behavior of stress-attracting and stress-neutral suffix classes;
+- the place-bearing triggers, domains, and outputs of nasal place assimilation beyond the established non-assimilation before /h/;
+- the membership of non-tense suffixes in the dominant/fusing versus recessive/transparent contraction classes;
+- the identity and behavior of stress-attracting and stress-neutral suffix classes, and whether either stress class correlates with contraction-class membership;
 - the entire orthographic system;
 - POS inventory and all lexical entries;
 - case-suffix forms, number morphology, and complete paradigms;
