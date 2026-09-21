@@ -1,0 +1,497 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/minitongue/schema.json",
+  "title": "Minitongue normalized linguistic data",
+  "description": "Derived interchange model for canonical grammar, lexicon, and example data. x-tei annotations are non-normative TEI P5 mapping hints.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "language",
+    "grammar",
+    "lexicon",
+    "examples"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "language": {
+      "$ref": "#/$defs/language"
+    },
+    "grammar": {
+      "$ref": "#/$defs/grammar"
+    },
+    "lexicon": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lexeme"
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/example"
+      }
+    }
+  },
+  "$defs": {
+    "idList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-tei": {
+        "target": "fs",
+        "mapping": "Each property may map to f/@name; primitive values map to symbol/string/numeric/binary as appropriate."
+      }
+    },
+    "language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "tag",
+        "metalanguage",
+        "project_version",
+        "status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "teiHeader/profileDesc/langUsage/language"
+          }
+        },
+        "tag": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "teiHeader/profileDesc/langUsage/language/@ident",
+            "note": "Use a valid BCP 47 tag; private-use tags are permitted when appropriate."
+          }
+        },
+        "metalanguage": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "usage": "Default xml:lang for definitions/translations."
+          }
+        },
+        "project_version": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "teiHeader/editionStmt/edition"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "stable",
+            "archived"
+          ],
+          "x-tei": {
+            "target": "teiHeader/revisionDesc/change/@status",
+            "note": "Project convention; exporter may encode differently."
+          }
+        }
+      }
+    },
+    "grammarRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_id",
+        "domain",
+        "title",
+        "statement"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "pattern": "^G-(PHON|ORTH|MORPH|SYN|SEM|PRAG|DISC|LEX)-[0-9]{3,}$",
+          "x-tei": {
+            "target": "div/@xml:id"
+          }
+        },
+        "domain": {
+          "type": "string",
+          "enum": [
+            "PHON",
+            "ORTH",
+            "MORPH",
+            "SYN",
+            "SEM",
+            "PRAG",
+            "DISC",
+            "LEX"
+          ],
+          "x-tei": {
+            "target": "div/@subtype"
+          }
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "div/head"
+          }
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "div/p"
+          }
+        },
+        "conditions": {
+          "type": "string",
+          "x-tei": {
+            "target": "div/note[@type='conditions']"
+          }
+        },
+        "exceptions": {
+          "type": "string",
+          "x-tei": {
+            "target": "div/note[@type='exceptions']"
+          }
+        },
+        "features": {
+          "$ref": "#/$defs/features"
+        },
+        "depends_on": {
+          "$ref": "#/$defs/idList",
+          "x-tei": {
+            "target": "ref/@target",
+            "note": "Project-defined cross-reference mapping."
+          }
+        },
+        "example_refs": {
+          "$ref": "#/$defs/idList",
+          "x-tei": {
+            "target": "ref/@target"
+          }
+        }
+      },
+      "x-tei": {
+        "target": "text/body/div[@type='grammar-rule']",
+        "note": "A project mapping for prose grammar; constrain with an ODD if exporting."
+      }
+    },
+    "pos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "name"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "glossAbbreviation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "abbreviation",
+        "meaning",
+        "source"
+      ],
+      "properties": {
+        "abbreviation": {
+          "type": "string",
+          "pattern": "^[A-Z0-9][A-Z0-9.-]*$"
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "leipzig",
+            "project"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "grammar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rules",
+        "parts_of_speech",
+        "gloss_abbreviations"
+      ],
+      "properties": {
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/grammarRule"
+          }
+        },
+        "parts_of_speech": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/pos"
+          }
+        },
+        "gloss_abbreviations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/glossAbbreviation"
+          }
+        }
+      },
+      "x-tei": {
+        "target": "text/body/div[@type='grammar']"
+      }
+    },
+    "sense": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sense_id",
+        "definition"
+      ],
+      "properties": {
+        "sense_id": {
+          "type": "string",
+          "pattern": "^L-[0-9]{4,}-S[0-9]{2,}$",
+          "x-tei": {
+            "target": "sense/@xml:id"
+          }
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "sense/def"
+          }
+        },
+        "usage": {
+          "type": "string",
+          "x-tei": {
+            "target": "sense/usg"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "x-tei": {
+            "target": "sense/note"
+          }
+        }
+      },
+      "x-tei": {
+        "target": "sense"
+      }
+    },
+    "lexeme": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lexeme_id",
+        "lemma",
+        "ipa",
+        "pos",
+        "features",
+        "senses"
+      ],
+      "properties": {
+        "lexeme_id": {
+          "type": "string",
+          "pattern": "^L-[0-9]{4,}$",
+          "x-tei": {
+            "target": "entry/@xml:id"
+          }
+        },
+        "lemma": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "entry/form[@type='lemma']/orth"
+          }
+        },
+        "ipa": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^/\\[\\]]+$",
+          "x-tei": {
+            "target": "entry/form[@type='lemma']/pron",
+            "attributes": {
+              "notation": "IPA"
+            }
+          }
+        },
+        "pos": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "entry/gramGrp/pos"
+          }
+        },
+        "features": {
+          "$ref": "#/$defs/features"
+        },
+        "etymology": {
+          "type": "string",
+          "x-tei": {
+            "target": "entry/etym"
+          }
+        },
+        "senses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sense"
+          }
+        }
+      },
+      "x-tei": {
+        "target": "entry",
+        "module": "dictionaries"
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "example_id",
+        "judgment",
+        "text",
+        "ipa",
+        "segmentation",
+        "gloss",
+        "translation",
+        "rule_refs",
+        "violated_rule_refs",
+        "lexeme_refs"
+      ],
+      "properties": {
+        "example_id": {
+          "type": "string",
+          "pattern": "^EX-[0-9]{4,}$",
+          "x-tei": {
+            "target": "cit/@xml:id"
+          }
+        },
+        "judgment": {
+          "type": "string",
+          "enum": [
+            "grammatical",
+            "ungrammatical",
+            "marginal"
+          ],
+          "x-tei": {
+            "target": "cit/@ana",
+            "note": "Project-defined analysis pointer recommended."
+          }
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "cit[@type='example']/quote"
+          }
+        },
+        "ipa": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^/\\[\\]]+$",
+          "x-tei": {
+            "target": "cit[@type='example']/fs[@type='interlinear-analysis']/f[@name='ipa']/string"
+          }
+        },
+        "segmentation": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "cit[@type='example']/fs[@type='interlinear-analysis']/f[@name='segmentation']/string"
+          }
+        },
+        "gloss": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "cit[@type='example']/fs[@type='interlinear-analysis']/f[@name='gloss']/string"
+          }
+        },
+        "translation": {
+          "type": "string",
+          "minLength": 1,
+          "x-tei": {
+            "target": "cit[@type='example']/cit[@type='translation']/quote"
+          }
+        },
+        "rule_refs": {
+          "$ref": "#/$defs/idList",
+          "x-tei": {
+            "target": "cit/@ana",
+            "note": "May be rendered as pointers to grammar-rule xml:id values."
+          }
+        },
+        "violated_rule_refs": {
+          "$ref": "#/$defs/idList",
+          "x-tei": {
+            "target": "fs/f[@name='violated-rule']/vColl"
+          }
+        },
+        "lexeme_refs": {
+          "$ref": "#/$defs/idList",
+          "x-tei": {
+            "target": "fs/f[@name='lexeme-ref']/vColl"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "x-tei": {
+            "target": "cit/note"
+          }
+        }
+      },
+      "x-tei": {
+        "target": "cit[@type='example']",
+        "modules": [
+          "core",
+          "iso-fs"
+        ],
+        "note": "Interlinear analysis mapping is project-specific and should be constrained by ODD."
+      }
+    }
+  },
+  "x-tei": {
+    "guidelines": "TEI P5 4.12.0",
+    "namespace": "http://www.tei-c.org/ns/1.0",
+    "recommended_modules": [
+      "core",
+      "header",
+      "textstructure",
+      "dictionaries",
+      "iso-fs"
+    ],
+    "conformance": "Non-normative mapping hints only. Exported XML requires independent TEI schema/ODD validation.",
+    "lexicon_grouping": "Rows in lexicon.tsv are grouped by lexeme_id into one entry with one or more sense children."
+  }
+}
