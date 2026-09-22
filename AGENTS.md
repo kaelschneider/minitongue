@@ -25,7 +25,8 @@ Before changing language data:
 2. Read only the relevant section(s) of `grammar.md`.
 3. Read only the relevant rows/columns of `lexicon.tsv` and `examples.tsv`.
 4. Read `schema.json` only for data-shape, interchange, or TEI work.
-5. Run `python scripts/validate.py` after edits.
+5. Use the validator's discovery modes instead of manually deriving repository state when applicable.
+6. Run `python scripts/validate.py` after edits.
 
 Do not treat chat history as canonical language data.
 
@@ -52,6 +53,61 @@ minitongue/
 - Preserve stable IDs. Never recycle or renumber IDs for cosmetic reasons.
 - Prefer minimal diffs. Do not reformat unrelated rows or sections.
 - Do not add files or dependencies unless requested or clearly necessary.
+
+## Decision economy
+
+Minimize creator microdecisions and conversational branching.
+
+Classify unresolved choices before escalating them:
+
+### Level A — delegated
+
+Resolve without asking when the choice is mechanically determined by canonical rules, concerns formatting/IDs/references/validation, is a regular predictable form, is a low-impact implementation detail, or is reversible without changing the language's architecture.
+
+### Level B — batch approval
+
+Include in one coherent proposal when the choice establishes a local productive pattern, affects several related lexemes or examples, introduces a limited semantic or morphophonological distinction, or has meaningful but contained downstream effects. Do not ask about Level B decisions individually.
+
+### Level C — creator decision
+
+Escalate when alternatives materially differ in phonological or grammatical architecture, productive morphological organization, alignment or argument structure, major semantic distinctions, typological character, broad diachronic consequences, or compatibility with already accepted design principles.
+
+When several Level B/C issues are related, present one recommended internally coherent bundle and only the consequential alternatives.
+
+Use this default resolution hierarchy:
+
+1. an already established canonical rule;
+2. a productive extension of an established rule;
+3. a new regular rule;
+4. a lexically restricted exception;
+5. a new subsystem.
+
+Do not resolve an `UNSPECIFIED` point merely for completeness. Resolve it only when it blocks the current task, a useful discovery example, or a required regression test.
+
+## Mechanical discovery
+
+Mechanically discoverable repository state should be obtained mechanically rather than reconstructed by inspection, inference, or creator questioning.
+
+Before broad-reading canonical files for repository metadata, ID availability, unresolved-item inventories, or regression coverage, use `scripts/validate.py`:
+
+```text
+python scripts/validate.py --summary
+python scripts/validate.py --unresolved
+python scripts/validate.py --show G-MORPH-006
+python scripts/validate.py --show L-0001
+python scripts/validate.py --show L-0001-S01
+python scripts/validate.py --show EX-0001
+```
+
+Add `--json` to any discovery command when machine-readable output is preferable.
+
+`--summary` is the authority for mechanically derived counts, next available lexeme/example/rule IDs, POS and project-gloss inventories, and regression-coverage counts. Do not estimate these by scanning files manually.
+
+`--unresolved` is the authority for locating explicit `UNSPECIFIED` occurrences. Use it before constructing an ad hoc unresolved-items list.
+
+`--show ID` should be preferred over broad file reads when one stable rule, lexeme, sense, or example is needed. It returns the exact canonical source record.
+
+Discovery output is derived metadata, not a new source of linguistic truth. If a discovery report disagrees with canonical files, fix the validator or source data rather than treating the report as an independent linguistic authority.
 
 ## `grammar.md`
 
