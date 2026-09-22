@@ -101,7 +101,7 @@ python scripts/validate.py --show EX-0001
 
 Add `--json` to any discovery command when machine-readable output is preferable.
 
-`--summary` is the authority for mechanically derived counts, next available lexeme/example/rule IDs, POS and project-gloss inventories, and regression-coverage counts. Do not estimate these by scanning files manually.
+`--summary` is the authority for mechanically derived counts, next available lexeme/sense/example/rule IDs, POS and project-gloss inventories, and regression-coverage counts. Do not estimate these by scanning files manually.
 
 `--unresolved` is the authority for locating explicit `UNSPECIFIED` occurrences. Use it before constructing an ad hoc unresolved-items list.
 
