@@ -327,6 +327,14 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 **Depends on:** G-MORPH-016
 
+### G-MORPH-019 — Underlying case forms and regular surface realization
+
+**Statement:** Each overt nominal case is represented by one minimal underlying suffix once its segmental form is established. Surface variants are derived through the general vowel repair, assimilation, fusion, and deletion rules before case-specific allomorphy is considered.
+
+**Conditions:** Case-specific allomorphs are introduced only when an accepted form cannot be derived from the general morphophonology. The segmental forms of the overt cases remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-006 G-PHON-011 G-PHON-012 G-PHON-013 G-PHON-014 G-PHON-015
+
 ### Derivation and compounding
 
 ### G-MORPH-005 — Productive layered derivation
@@ -456,7 +464,7 @@ Diachrony is modeled selectively. Explicit historical developments may be added 
 
 ## Open questions
 
-The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
+The following matters remain **UNSPECIFIED** in the current design state:
 
 - onset distribution beyond the explicit coda exclusions and /h ɕ j/ onset-only restriction;
 - whether non-diphthong vowel sequences, including morphologically preserved /ua/, may occur lexically;
@@ -478,4 +486,4 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Canonical regression examples are not yet added because the lexicon remains empty and the segmental forms of case suffixes, indexing markers, and applicatives remain **UNSPECIFIED**. The directional and TAM forms are established, but complete examples would still require inventing canonical lexical and inflectional material.
+Canonical regression examples are not yet added because the lexicon remains empty and the segmental forms of overt case suffixes and applicatives, together with the differential and slot-specific surface realization of indexing, remain **UNSPECIFIED**. The directional, TAM, and underlying person-index forms are established, but complete examples would still require inventing canonical lexical and inflectional material.
