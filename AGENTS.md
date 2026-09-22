@@ -8,14 +8,15 @@ This repository is the canonical, human-readable specification of Minitongue. Ke
 
 Use only these branches:
 
-- `main` — canonical, accepted language state.
-- `experimental` — provisional or exploratory work that is not yet canonical.
+- `main` — canonical, accepted Minitongue language state.
+- `experimental` — provisional or exploratory Minitongue work that is not yet canonical.
+- `proto` — independent Proto-Minitongue design workspace using the same repository contracts; its linguistic data are not canonical Minitongue data.
 
 Do not create, rename, delete, or use additional branches unless the user explicitly requests it.
 
 Do not alter the repository structure unless the user explicitly requests a structural change. This includes adding, deleting, renaming, moving, or reorganizing files or directories. New linguistic content must fit the established files by default.
 
-When branch choice matters, accepted canonical changes belong on `main`; exploratory changes belong on `experimental`.
+When branch choice matters, accepted canonical Minitongue changes belong on `main`; exploratory Minitongue changes belong on `experimental`; Proto-Minitongue work belongs on `proto`.
 
 ## Read order
 
