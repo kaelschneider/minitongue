@@ -486,8 +486,7 @@ def unresolved_items(path: Path) -> list[dict[str, object]]:
             heading_match = re.match(r"^(#{2,3})\s+(.+?)\s*$", line)
             if heading_match:
                 current_section = heading_match.group(2)
-                if len(heading_match.group(1)) <= 2:
-                    current_rule = ""
+                current_rule = ""
 
         if "UNSPECIFIED" in line:
             items.append(
@@ -580,6 +579,14 @@ def collect_summary(
     unresolved = unresolved_items(root / GRAMMAR_FILE)
     uncovered_rules = sorted(rules - referenced_rules)
     unreferenced_lexemes = sorted(set(lexeme_ids) - referenced_lexemes)
+    next_sense_ids = {
+        lexeme_id: next_numbered_id(
+            (sense_id for sense_id in sense_ids if sense_id.startswith(f"{lexeme_id}-S")),
+            f"{lexeme_id}-S",
+            2,
+        )
+        for lexeme_id in lexeme_ids
+    }
 
     return {
         "rules": {
@@ -608,6 +615,7 @@ def collect_summary(
         },
         "next_ids": {
             "lexeme": next_numbered_id(lexeme_ids, "L-", 4),
+            "senses": next_sense_ids,
             "example": next_numbered_id(example_ids, "EX-", 4),
             "rules": next_rule_ids,
         },
