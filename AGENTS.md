@@ -131,6 +131,26 @@ These are project mappings, not TEI conformance. Validate generated XML independ
 
 If changing file structure or column names, update `AGENTS.md`, `schema.json`, and `scripts/validate.py` together.
 
+## Representation-bootstrap acceptance test
+
+The representation bootstrap is not complete merely when citation forms or isolated paradigms exist. Its minimum canonical regression coverage should demonstrate:
+
+- active intransitive S;
+- inactive intransitive S;
+- ordinary transitive A–P;
+- zero ABS versus an overt non-ABS case;
+- nominal number;
+- a stative/property predicate;
+- a verbal grade contrast;
+- both OBJ/PAT and SUBJ/AGT indexing domains;
+- directional morphology;
+- the affected applicative;
+- the general oblique applicative;
+- at least one significant morphophonological repair; and
+- a short connected passage using only established canonical material.
+
+If that connected passage requires an unanticipated construction, mark the construction `UNSPECIFIED` and design it explicitly rather than patching the text.
+
 ## Definition of done
 
 Canonical files agree; IDs and references resolve; IPA/Leipzig mechanical checks pass; JSON-in-TSV parses; and `python scripts/validate.py` exits 0.
