@@ -131,6 +131,10 @@ These are project mappings, not TEI conformance. Validate generated XML independ
 
 If changing file structure or column names, update `AGENTS.md`, `schema.json`, and `scripts/validate.py` together.
 
+## Representation-bootstrap lexicon selection
+
+Build the initial lexicon as a small diagnostic set rather than as broad basic vocabulary. Prefer lexemes that test several dimensions at once: semantic class, lexical valency, root shape, grade behavior, phonological or morphophonological behavior, case selection, applicative compatibility, and explanatory diachrony. Include ordinary control items as well as forms expected to trigger important alternations.
+
 ## Representation-bootstrap acceptance test
 
 The representation bootstrap is not complete merely when citation forms or isolated paradigms exist. Its minimum canonical regression coverage should demonstrate:
