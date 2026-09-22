@@ -1,17 +1,17 @@
 example_id	judgment	text	ipa	segmentation	gloss	translation	rule_refs	violated_rule_refs	lexeme_refs	notes
-EX-0001	grammatical	huci	ˈhuɕi	h-u-k-i	say-REAL-1-NPST	I say.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002			1.NONPAST < *-ki.
-EX-0002	grammatical	huci	ˈhutɕi	h-u-t-i	say-REAL-2-NPST	You say.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002			Open-syllable 2.NONPAST retains [tɕi] despite inherited spelling ⟨ci⟩.
-EX-0003	grammatical	hui	hui	h-u-p-i	say-REAL-3-NPST	They say.	G-MORPH-006 G-MORPH-007 G-PHON-019			3.NONPAST loses historical *p via the inherited /v/ deletion pathway.
-EX-0004	grammatical	huva	ˈhuva	h-u-k-a	say-REAL-1-PST	I said.	G-MORPH-006 G-MORPH-007 G-PHON-023			1.PAST is syncretic with 3.PAST.
-EX-0005	grammatical	huda	ˈhuda	h-u-t-a	say-REAL-2-PST	You said.	G-MORPH-006 G-MORPH-007 G-PHON-023			2.PAST remains distinct.
-EX-0006	grammatical	huva	ˈhuva	h-u-p-a	say-REAL-3-PST	They said.	G-MORPH-006 G-MORPH-007 G-PHON-023			3.PAST is syncretic with 1.PAST.
-EX-0007	grammatical	hukka	ˈhukːa	h-u-h-k-a	say-REAL-ASSERT-1-PST	I did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			ASSERT protects the historical 1-person stop as a geminate.
-EX-0008	grammatical	hutta	ˈhutːa	h-u-h-t-a	say-REAL-ASSERT-2-PST	You did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			ASSERT protects the historical 2-person stop as a geminate.
-EX-0009	grammatical	huppa	ˈhupːa	h-u-h-p-a	say-REAL-ASSERT-3-PST	They did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			ASSERT protects the historical 3-person stop as a geminate.
-EX-0010	grammatical	hukki	ˈhukːi	h-u-h-k-i	say-REAL-ASSERT-1-NPST	I really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			Gemination blocks the ordinary 1.NONPAST palatalization.
-EX-0011	grammatical	hutti	ˈhutːi	h-u-h-t-i	say-REAL-ASSERT-2-NPST	You really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			Gemination blocks the ordinary 2.NONPAST palatalization.
-EX-0012	grammatical	huppi	ˈhupːi	h-u-h-p-i	say-REAL-ASSERT-3-NPST	They really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022			Gemination blocks the ordinary 3.NONPAST lenition and deletion.
-EX-0013	grammatical	ruci	ˈruɕi	r-u-k-i	move-REAL-1-NPST	I go.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002			Cross-root regression for the semantic-primal conjugation.
-EX-0014	grammatical	rui	rui	r-u-p-i	move-REAL-3-NPST	They go.	G-MORPH-006 G-MORPH-007 G-PHON-019			Cross-root 3.NONPAST regression.
-EX-0015	grammatical	ruva	ˈruva	r-u-k-a	move-REAL-1-PST	I went.	G-MORPH-006 G-MORPH-007 G-PHON-023			Cross-root 1.PAST regression.
-EX-0016	grammatical	ruva	ˈruva	r-u-p-a	move-REAL-3-PST	They went.	G-MORPH-006 G-MORPH-007 G-PHON-023			Cross-root 3.PAST syncretism regression.
+EX-0001	grammatical	huci	ˈhuɕi	h-u-k-i	say-REAL-1-NPST	I say.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002		L-0002	1.NONPAST < *-ki.
+EX-0002	grammatical	huci	ˈhutɕi	h-u-t-i	say-REAL-2-NPST	You say.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002		L-0002	Open-syllable 2.NONPAST retains [tɕi] despite inherited spelling ⟨ci⟩.
+EX-0003	grammatical	hui	hui	h-u-p-i	say-REAL-3-NPST	They say.	G-MORPH-006 G-MORPH-007 G-PHON-019		L-0002	3.NONPAST loses historical *p via the inherited /v/ deletion pathway.
+EX-0004	grammatical	huva	ˈhuva	h-u-k-a	say-REAL-1-PST	I said.	G-MORPH-006 G-MORPH-007 G-PHON-023		L-0002	1.PAST is syncretic with 3.PAST.
+EX-0005	grammatical	huda	ˈhuda	h-u-t-a	say-REAL-2-PST	You said.	G-MORPH-006 G-MORPH-007 G-PHON-023		L-0002	2.PAST remains distinct.
+EX-0006	grammatical	huva	ˈhuva	h-u-p-a	say-REAL-3-PST	They said.	G-MORPH-006 G-MORPH-007 G-PHON-023		L-0002	3.PAST is syncretic with 1.PAST.
+EX-0007	grammatical	hukka	ˈhukːa	h-u-h-k-a	say-REAL-ASSERT-1-PST	I did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	ASSERT protects the historical 1-person stop as a geminate.
+EX-0008	grammatical	hutta	ˈhutːa	h-u-h-t-a	say-REAL-ASSERT-2-PST	You did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	ASSERT protects the historical 2-person stop as a geminate.
+EX-0009	grammatical	huppa	ˈhupːa	h-u-h-p-a	say-REAL-ASSERT-3-PST	They did say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	ASSERT protects the historical 3-person stop as a geminate.
+EX-0010	grammatical	hukki	ˈhukːi	h-u-h-k-i	say-REAL-ASSERT-1-NPST	I really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	Gemination blocks the ordinary 1.NONPAST palatalization.
+EX-0011	grammatical	hutti	ˈhutːi	h-u-h-t-i	say-REAL-ASSERT-2-NPST	You really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	Gemination blocks the ordinary 2.NONPAST palatalization.
+EX-0012	grammatical	huppi	ˈhupːi	h-u-h-p-i	say-REAL-ASSERT-3-NPST	They really do say.	G-MORPH-006 G-MORPH-007 G-MORPH-008 G-PHON-022		L-0002	Gemination blocks the ordinary 3.NONPAST lenition and deletion.
+EX-0013	grammatical	ruci	ˈruɕi	r-u-k-i	move-REAL-1-NPST	I go.	G-MORPH-006 G-MORPH-007 G-PHON-012 G-ORTH-002		L-0010	Cross-root regression for the semantic-primal conjugation.
+EX-0014	grammatical	rui	rui	r-u-p-i	move-REAL-3-NPST	They go.	G-MORPH-006 G-MORPH-007 G-PHON-019		L-0010	Cross-root 3.NONPAST regression.
+EX-0015	grammatical	ruva	ˈruva	r-u-k-a	move-REAL-1-PST	I went.	G-MORPH-006 G-MORPH-007 G-PHON-023		L-0010	Cross-root 1.PAST regression.
+EX-0016	grammatical	ruva	ˈruva	r-u-p-a	move-REAL-3-PST	They went.	G-MORPH-006 G-MORPH-007 G-PHON-023		L-0010	Cross-root 3.PAST syncretism regression.
