@@ -325,13 +325,15 @@ The geminates block the ordinary NONPAST palatalization/merger and the plain-PAS
 
 **Depends on:** G-MORPH-020 G-MORPH-022 G-SYN-006
 
+
 ### G-MORPH-024 — Secondary-object alignment under applicativization
 
 **Statement:** With a transitive base, applicativization creates secondary-object alignment. The applied participant is the primary ABS object and has structural priority for the single OBJ-indexing slot. The pre-existing lexical theme remains morphologically ABS but does not compete with the applied participant for ordinary OBJ indexing.
 
-**Conditions:** If a construction independently makes more than one non-applied participant eligible for the OBJ slot, competition follows G-SYN-007. Additional behavioral diagnostics of primary versus secondary objecthood beyond case and indexing remain **UNSPECIFIED**.
+**Conditions:** Additional behavioral diagnostics of primary versus secondary objecthood beyond case and indexing, and the resolution of any future construction that independently makes more than one non-applied participant eligible for the OBJ slot, remain **UNSPECIFIED**.
 
-**Depends on:** G-MORPH-023 G-SYN-003 G-SYN-006 G-SYN-007
+**Depends on:** G-MORPH-023 G-SYN-003 G-SYN-006
+
 
 ### G-MORPH-025 — Basic-object licensing and ordinary object indexing
 
@@ -343,14 +345,14 @@ The geminates block the ordinary NONPAST palatalization/merger and the plain-PAS
 | --- | --- | --- |
 | 1.OBJ | *-n-k- | -n- < *-ŋ- |
 | 2.OBJ | *-n-t- | -n- |
-| 3.PROX.OBJ | *-n-p- | -m- |
-| 3.OBV.OBJ | ultimately *-p- | -v- |
+| 3.OBJ | *-n-p- | -m- |
 
-The 1OBJ and 2OBJ forms are synchronically syncretic as `-n-`. The 3.OBV `-v-` marker is not an independent fourth person consonant: it ultimately derives from the same inherited *-p- third-person marker as 3.PROX.
+The 1OBJ and 2OBJ forms are synchronically syncretic as `-n-`; third person is `-m-`. No proximate/obviative distinction is currently established.
 
-**Conditions:** The historical fusion of *-n- plus person is specified by G-PHON-024. The exact intermediate history connecting 3.OBV *-p- to `-v-`, including its interaction with the older *-n- object-licensing layer, remains **UNSPECIFIED** beyond G-PHON-025. Synchronically, ordinary speakers need not analyze `-n-/-n-/-m-/-v-` as transparent sequences.
+**Conditions:** The historical fusion of *-n- plus person is specified by G-PHON-024. Synchronically, ordinary speakers need not analyze `-n-/-n-/-m-` as transparent sequences. A proposed support-vowel repair for ordinary `n-/m-` before consonant-initial roots remains **UNSPECIFIED** pending construction testing.
 
-**Depends on:** G-MORPH-007 G-PHON-024 G-PHON-025 G-SYN-007
+**Depends on:** G-MORPH-007 G-PHON-024
+
 
 ### G-MORPH-026 — Applied-object person exposure
 
@@ -360,14 +362,13 @@ The 1OBJ and 2OBJ forms are synchronically syncretic as `-n-`. The 3.OBV `-v-` m
 | --- | --- |
 | 1.OBJ | -k- |
 | 2.OBJ | -t- |
-| 3.PROX.OBJ | -p- |
-| 3.OBV.OBJ | -v- |
+| 3.OBJ | -p- |
 
-**Analysis:** The applied series is conservative rather than a separate innovative person paradigm: APPL replaces the generic/basic-object licensing function of *-n-, thereby exposing *-k/*-t/*-p. The obviative `-v-` remains an inherited reflex of third-person *-p-.
+**Analysis:** The applied series is conservative rather than a separate innovative person paradigm: APPL replaces the generic/basic-object licensing function of *-n-, thereby exposing *-k/*-t/*-p.
 
-**Conditions:** The surface morphophonology where exposed `-k-/-t-/-p-/-v-` meets neighboring directional, root-grade, or applicative material remains governed by established phonology where applicable and is otherwise **UNSPECIFIED**.
+**Conditions:** The surface morphophonology where exposed `-k-/-t-/-p-` meets neighboring directional, root-grade, or applicative material remains governed by established phonology where applicable and is otherwise **UNSPECIFIED**. In particular, inherited *p is expected to undergo the independently established positional sound changes rather than being treated as an invariant surface /p/.
 
-**Depends on:** G-MORPH-023 G-MORPH-025 G-PHON-025
+**Depends on:** G-MORPH-023 G-MORPH-025
 
 ### G-MORPH-027 — Semantic-primal applicative finite template
 
@@ -459,15 +460,7 @@ Internal noun-phrase order and agreement are **UNSPECIFIED**.
 
 **Depends on:** G-SYN-005 G-MORPH-023 G-MORPH-024
 
-### G-SYN-007 — Third-person obviation and object-index competition
 
-**Statement:** Third-person object indexing distinguishes proximate from obviative reference. Proximate status tracks greater discourse prominence; within the relevant local domain, when multiple animate third persons require contrast, one is proximate and additional third persons are obviative.
-
-**Hierarchy:** Applied-object status has structural priority for OBJ indexing under G-MORPH-024. Where genuinely competing eligible non-applied objects remain, use the hierarchy `SAP > 3.PROX > 3.OBV`. First and second person form one speech-act-participant tier rather than an inherent 1>2 or 2>1 ranking; grammatical role resolves a 1↔2 tie.
-
-**Conditions:** The exact syntactic/discourse domain within which one third person must be selected as proximate, and the behavior of inanimate third persons in obviation, remain **UNSPECIFIED**.
-
-**Depends on:** G-SYN-003 G-MORPH-024 G-MORPH-025 G-MORPH-026
 
 ### Negation
 
@@ -519,6 +512,148 @@ Information-structure rules governing constituent-order flexibility and argument
 
 **Depends on:** G-MORPH-006 G-MORPH-022 G-MORPH-023
 
+
+### Experimental lexical/bootstrap design ledger — noncanonical working state
+
+**Status:** This section preserves accepted-in-conversation design direction from the 2026-09-22 lexical-bootstrap session so that unresolved work is not lost. It is intentionally **EXPERIMENTAL**. Items explicitly marked **UNSPECIFIED** are not canonical commitments, and discovery forms below are not canonical lexemes merely because they are recorded here.
+
+#### Diagnostic concept inventory
+
+The first lexical bootstrap targets a 24-concept diagnostic core plus an expansion queue. The core is grammar-first and contrast-driven rather than intended as a universal basic-vocabulary list.
+
+**Verbal/predicative slots:** SEE, LOOK, KNOW.DIRECT, INFER, SAY, REPORT/RECOUNT, GIVE, SHARE, HOLD/KEEP, CARRY, WALK, CLIMB, TRACK, HUNT/FISH, HEALTHY, BALANCED/IN-ORDER.
+
+**Nominal slots:** HUMAN/PERSON, SPIRIT/PRESENCE, WATER, PLACE, KIN, TOOL, FOOD/RESOURCE, ANCESTOR.
+
+The target balance is approximately 16 verbal/predicative and 8 nominal items, with roughly 6 intransitive, 8 transitive, and 2 ditransitive verbal frames. Exact lexicalization, colexification, and derivational relationships are discovery questions rather than preconditions.
+
+The expansion queue is prioritized jointly by grammar gaps, connected-text needs, cultural-domain coverage, and broad communicative frequency. Early queue items include FISH, FIND/CATCH, HEAR, LISTEN, ATTUNE/READ.CONDITIONS, RESTORE.RELATION, TREE/LIFE-FORM, and NAME/designation.
+
+#### Lexical feature contract
+
+The experimental feature policy is layered-minimal:
+
+- use a small controlled core of lexical features and add new keys only for accepted grammatical or maintenance needs;
+- verbs record broad `valency` values such as `intransitive`, `transitive`, and `ditransitive`; finer argument-structure features are evidence-triggered;
+- each lexeme has one controlled primary `semantic_domain`, with limited secondary domains only where genuinely useful;
+- `concepticon_id` is optional and is assigned only for close semantic equivalence; approximate broader/narrower relationships remain research notes unless later automation justifies richer structure;
+- store `root` only where the lemma does not make the synchronic root mechanically recoverable;
+- do not add generic lexicalization-status or cultural-salience metadata at bootstrap;
+- irregular/class features are allowed only after the corresponding behavior is defined in grammar;
+- ordinary selectional compatibility remains in definitions/usage; controlled selectional features are added only when needed for recurring grammar or deterministic generation;
+- `grammar.md` is the canonical source for controlled feature keys/values, with validation and interchange representations derived from it.
+
+#### Experimental verbal root-class inventory
+
+Three root classes are currently under test:
+
+| Root class | Underlying form | Default graded stem | Experimental interpretation |
+| --- | --- | --- | --- |
+| semantic-primal | `C` | `C-GRADE` | Inherited broad semantic root. |
+| linked biconsonantal | `C₁C₂` | `C₁-e-C₂-GRADE` | Productive transparent combination of semantic-primal consonants. C₂ is the semantic head; C₁ modifies it. The internal /e/ is the LINKING/e-grade, not epenthesis. |
+| lexical-vocalic biconsonantal | `C₁VC₂` | `C₁-V-C₂-GRADE` | Independent lexical root. It is not required to decompose into semantic-primal meanings and is not limited to semantic-primal consonant combinations. |
+
+A separate VC root class is **not established**.
+
+The four grade vowels remain /a/ NONFINITE, /u/ REALIS, /i/ IRREALIS, and /e/ LINKING. Whether all three experimental root classes ultimately share one complete inflectional realization beyond the abstract grade slot remains subject to construction testing.
+
+Discovery-only examples of transparent linked formations include `*t-e-j` SEE-like CONTACT + PERCEIVE, `*s-e-h` REPORT-like TRACE/SEQUENCE + EXPRESS, `*m-e-n` SHARE-like AGGREGATE + TRANSFER, and `*r-e-g` CARRY-like MOTION + RETAIN. These examples illustrate the C₁/C₂ organization and are not canonical lexical entries.
+
+#### Experimental stative subtypes
+
+Stative morphology is currently treated as a stem-behavior subtype rather than a separate POS or root class.
+
+| Root class | Default | Stative architecture |
+| --- | --- | --- |
+| semantic-primal | `C-GRADE` | mobile stative `GRADE-C` |
+| linked biconsonantal | `C₁-e-C₂-GRADE` | compact stative `C₁C₂-GRADE` |
+| lexical-vocalic biconsonantal | `C₁-V-C₂-GRADE` | **UNSPECIFIED** |
+
+Experimental stative semantics and licensing:
+
+- eligibility is lexical, but realization is constructionally selected;
+- stative morphology centers on stable/non-dynamic predication, especially properties and configurations;
+- result, possession/control, and relational states require lexical and relational licensing rather than being automatic;
+- stative realization strongly correlates with inactive-S alignment but is not definitionally identical to inactive-S;
+- stativization preserves lexical valency by default;
+- all four vowel grades remain available in stative stems;
+- aspect remains independent: IPFV naturally presents a state as holding; PFV presents it as bounded/holistic and does not automatically create an inchoative;
+- directionals retain their established relational meanings; inchoative/cessative readings arise compositionally only when establishment/dissolution of the relevant relation constitutes the state;
+- lexical representation should require only an eligibility feature such as `stative_eligible: true`; the stative shape is derived from root class.
+
+#### Experimental stative realization procedure
+
+The following repair algorithm was selected for discovery testing:
+
+1. Assemble the complete morphological word using the underlying stative architecture.
+2. Select morphological vowel/consonant grades before phonological support is considered.
+3. Apply ordinary syllabification and higher-ranked established assimilation/fusion repairs.
+4. Permit cross-morpheme syllabification wherever C₁ can legally occupy a coda and C₂ the following onset.
+5. Preserve the compact/mobile stative unchanged whenever it is phonotactically legal.
+6. If an initial `C₁C₂-` stative remains illegal, insert support /e/: e.g. schematic `*gd-a > ge.da`.
+7. If a semantic-primal `GRADE-C` stative ends in a consonant that cannot surface word-finally, apply ordinary repair first; if the root still cannot be preserved, append support /e/ rather than reverting automatically to `C-GRADE`.
+8. Support /e/ is phonological support, not LINKING morphology. Once inserted it participates in ordinary vowel repair and later genuinely productive surface phonology.
+9. Support /e/ is inserted after morphological grade/gradation selection and therefore cannot retroactively select a different consonant grade.
+10. Support /e/ is stress-neutral; stress is computed from the unrepaired morphological structure.
+11. Prefixation does not undo semantic-primal `GRADE-C` order.
+12. Support /e/ is not stored in the stem. Repair is recomputed after full morphology, so a vowel-bearing prefix may make support unnecessary: schematic `*gd-a > ge.da` but `i-gd-a > ig.da` where legal.
+
+Whether these repairs require changes to the general repair hierarchy, and their interaction with historical sound laws outside the tested environments, remain **UNSPECIFIED**.
+
+#### Object indexing corrections
+
+For ordinary/basic objects, the current experimental surface series is:
+
+| Object person | Ordinary OBJ |
+| --- | --- |
+| 1P | `n-` |
+| 2P | `n-` |
+| 3P | `m-` |
+
+The inherited basic-object layer accounts historically for the `n/n/m` series. No third-person proximate/obviative distinction is currently established.
+
+Applicativization replaces the old basic-object licensing function and exposes the inherited person consonants:
+
+| Applied object person | Exposed OBJ |
+| --- | --- |
+| 1P | `k-` |
+| 2P | `t-` |
+| 3P | `p-` |
+
+Exposed *p remains subject to independently established positional sound changes. The surface behavior of exposed `k/t/p` before the new root classes remains **UNSPECIFIED**.
+
+A support-vowel analysis for ordinary nasal object indexes before consonant-initial roots is a live hypothesis, e.g. schematic `m-teju > emteju`/orthographic outcome subject to the established /j/ spelling. The support-vowel conditioning, its relation to overt directionals, and whether it is the same late /e/ mechanism as stative support remain **UNSPECIFIED**.
+
+#### Experimental noun discovery set and repair hypotheses
+
+Discovery noun forms currently under test are:
+
+| Concept | Discovery form | IPA |
+| --- | --- | --- |
+| HUMAN/PERSON | bema | bema |
+| SPIRIT/PRESENCE | cai | ɕai |
+| WATER | mui | mui |
+| PLACE | dak | dak |
+| KIN | mer | mer |
+| TOOL | vut | vut |
+| FOOD/RESOURCE | gus | gus |
+| ANCESTOR | narin | narin |
+
+These are discovery forms, not canonical lexical entries.
+
+For polysyllabic consonant-final stems, a repair of the type `narin-k > narnik`, `narin-n > narnin`, `narin-t > narnit` is under consideration. The exact formal analysis of this vowel displacement/metathesis and any further output such as proposed /rn/ > [nː] remain **UNSPECIFIED**.
+
+Monosyllabic consonant-final nouns are expected to divide into at least two historical behaviors:
+
+- **fusing stems**, which resolve C+C boundaries through the ordinary repair hierarchy;
+- **thematic stems**, historically containing a noun-class vowel that is absent in some citation forms but resurfaces before morphology where needed.
+
+Which final consonants favor fusion versus thematic-vowel realization, whether the conditioning is fully predictable or partly lexical, and the identity/number of historical noun-class vowels remain **UNSPECIFIED**. Avoid introducing free epenthesis or per-lexeme repair rules before this classification is established.
+
+#### Promotion gate
+
+Nothing in this experimental ledger becomes canonical lexical data solely by appearing here. Before promotion to `main`, a proposed lexeme or construction must have a fixed form/IPA, defined sense boundaries, required controlled features, a Concepticon check where relevant, discovery examples, interaction testing with existing grammar, and regression coverage for accepted behavior.
+
 ## Glossing conventions
 
 Examples must follow the Leipzig Glossing Rules. Standard Leipzig abbreviations are built into `scripts/validate.py` and need not be repeated here.
@@ -536,7 +671,6 @@ Add only abbreviations not covered by the Leipzig standard list.
 | APPL1 | affected applicative | Promotes an underlying DAT participant. |
 | APPL2 | general oblique applicative | Promotes an underlying LOC, CONT, POS, or INS/COM participant. |
 | CONT | containment case | Bounded inclusion/containment relation. |
-| OBV | obviative | Less discourse-prominent third-person status within the relevant obviation domain. |
 | POS | positional case | Contact/configuration/position relation. |
 | REAL | realis | Semantic-primal /u/ stem grade. |
 
@@ -644,23 +778,16 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Depends on:** G-PHON-018 G-PHON-022
 
+
 ### G-PHON-024 — Historical basic-object + person fusion
 
 **Statement:** In the inherited ordinary-object prefix complex, generic/basic-object *-n- fused with the following person consonant.
 
-**Historical outcomes:** *-n-k- > *-ŋ- > -n- for 1OBJ; *-n-t- > -n- for 2OBJ; *-n-p- > -m- for 3.PROX.OBJ.
+**Historical outcomes:** *-n-k- > *-ŋ- > -n- for 1OBJ; *-n-t- > -n- for 2OBJ; *-n-p- > -m- for 3OBJ.
 
 **Conditions:** Nasal place assimilation supplied the labial/coronal/dorsal place correspondences, followed by construction-specific historical cluster reduction/fusion. These are inherited outcomes, not a productive rule deleting /k t p/ after /n/ in arbitrary modern sequences. The later normalization of 1OBJ *-ŋ- to phonemic /n/ is specific to this inherited prefix history.
 
 **Depends on:** G-PHON-010
-
-### G-PHON-025 — Historical obviative reflex of third-person *p
-
-**Statement:** Object `-v-` marking 3.OBV ultimately derives from the inherited third-person consonant *-p- and therefore belongs historically to the same third-person series as 3.PROX `-p-` in the exposed applied-object paradigm.
-
-**Conditions:** The development is compatible with the inherited labial weakening pathway *p > /v/ reflected elsewhere in the language, but the exact historical conditioning that selected the obviative `-v-` reflex and its ordering relative to the older *-n- basic-object layer remain **UNSPECIFIED**. Synchronically, obviation is grammaticalized under G-SYN-007.
-
-**Depends on:** G-PHON-018 G-SYN-007
 
 ## Open questions
 
@@ -674,9 +801,11 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - POS inventory outside the established verb class and lexical entries outside the semantic-primal inventory;
 - segmental forms, stress classes, and grade selection of APPL1/APPL2 and the segmental forms of case suffixes;
 - semantic conditioning of the active–stative split and conditioning of differential case marking;
-- the exact historical path from third-person *-p- to 3.OBV `-v-` and its ordering relative to the older *-n- basic-object layer;
-- surface morphophonology of exposed applied-object `-k-/-t-/-p-/-v-` where existing rules do not determine the result;
-- the exact discourse/syntactic domain of proximate–obviative assignment and the treatment of inanimate third persons;
+- final promotion or rejection of the experimental semantic-primal, linked-biconsonantal, and lexical-vocalic root classes;
+- stative realization for lexical-vocalic roots, and whether stative support /e/ can be unified with other support-vowel processes;
+- conditioning of ordinary-object support before consonant-initial roots and the surface behavior of exposed applicative `k/t/p` across root classes;
+- classification of consonant-final nouns into fusing versus thematic stems, the history of any latent noun-class vowel, and the formal analysis of polysyllabic repair such as `narin-k > narnik`;
+- surface morphophonology of exposed applied-object `-k-/-t-/-p-` where existing rules do not determine the result;
 - behavioral properties of the secondary object beyond its retained ABS marking and lack of ordinary OBJ-index priority;
 - predicate-class membership and copular distribution;
 - valency-changing morphemes and ditransitive argument structure;
