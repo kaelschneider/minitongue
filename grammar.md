@@ -210,14 +210,16 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 | Code | Name | Notes |
 | --- | --- | --- |
+| n | noun | Nominal lexical class. |
+| v | verb | Verbal lexical class; includes stative/property concepts traditionally expressed by adjectives in some languages. |
 
 ### Nominal morphology
 
 ### G-MORPH-006 — Nominal case inventory and core alignment
 
-**Statement:** The nominal case inventory is ABS, ERG, GEN, DAT, LOC, CONT, POS, and INS/COM. ABS marks transitive P and inactive S; ERG marks transitive A and active S. GEN marks dependency relations including possession, affiliation, and part–whole relations. DAT marks an affected personal domain. LOC marks general spatial reference, CONT marks bounded containment or inclusion, POS marks contact/configuration/position, and INS/COM marks instrumental or associative/comitative relations.
+**Statement:** The nominal case inventory is ABS, ERG, GEN, DAT, LOC, CONT, POS, and INS/COM. ABS marks transitive P and inactive S; ERG marks transitive A and active S. GEN marks dependency relations including possession, affiliation, and part–whole relations. DAT marks an affected personal domain. LOC marks general spatial reference, CONT marks bounded containment or inclusion, POS marks contact/configuration/position, and INS/COM marks instrumental or associative/comitative relations. ABS is zero-marked.
 
-**Conditions:** The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class remain **UNSPECIFIED**. Differential marking conditions and the segmental forms of case suffixes remain **UNSPECIFIED**.
+**Conditions:** The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class remain **UNSPECIFIED**. Differential marking conditions and the segmental forms of the overt case suffixes remain **UNSPECIFIED**.
 
 **Depends on:** G-SYN-002 G-SYN-003
 
@@ -225,7 +227,7 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 **Statement:** The nominal template is `NOUN-(NUMBER)-(GEN)-CASE`, with number optional.
 
-**Conditions:** GEN may occur as the sole case marker or as an inner case before an eligible outer case under G-MORPH-008. The inventory and forms of number marking remain **UNSPECIFIED**.
+**Conditions:** GEN may occur as the sole case marker or as an inner case before an eligible outer case under G-MORPH-008. Number categories and their productivity are specified by G-MORPH-015; their segmental forms remain **UNSPECIFIED**.
 
 ### G-MORPH-008 — Restricted genitive case stacking
 
@@ -237,7 +239,7 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 ### Pronominal and deictic systems
 
-Person, number, clusivity, deixis, and any pronominally restricted alignment or case patterns are **UNSPECIFIED**.
+Free pronouns and bound person indexes share an older person base, but the bound indexing series is synchronically grammaticalized morphology under G-MORPH-018. The segmental forms of free pronouns, their number and clusivity distinctions, deixis, and any pronominally restricted alignment or case patterns remain **UNSPECIFIED**.
 
 ### Verbal morphology
 
@@ -245,7 +247,7 @@ Person, number, clusivity, deixis, and any pronominally restricted alignment or 
 
 **Statement:** The verbal template is `DIRECTIONAL-OBJ/PAT-ROOT-AUX/APP-SUBJ/AGT-TENSE-ASPECT`.
 
-**Conditions:** The segmental forms and distribution of OBJ/PAT and SUBJ/AGT indexing and the auxiliary inventory are **UNSPECIFIED**. Applicative morphology occupies the AUX/APP slot as specified below.
+**Conditions:** The underlying person bases and alignment domains of OBJ/PAT and SUBJ/AGT indexing are specified by G-MORPH-016–017. Their differential overt-realization conditions and slot-specific surface outputs remain **UNSPECIFIED**. The auxiliary inventory is **UNSPECIFIED**. Applicative morphology occupies the AUX/APP slot as specified below.
 
 ### G-MORPH-010 — Directional prefixes
 
@@ -285,7 +287,7 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 **Statement:** Minitongue has two productive applicative classes. An affected applicative promotes a DAT participant. A general oblique applicative promotes an INS/COM, LOC, CONT, or POS participant.
 
-**Conditions:** The segmental forms of both applicatives are **UNSPECIFIED**. GEN is not a productive applicative input. Applicatives occupy the AUX/APP position in G-MORPH-009.
+**Conditions:** Each applicative is represented by one compact underlying segmental form once established; its surface variants are derived by the general morphophonology unless a separate rule establishes otherwise. The segmental forms themselves and any historical relationship between the two applicatives remain **UNSPECIFIED**. GEN is not a productive applicative input. Applicatives occupy the AUX/APP position in G-MORPH-009.
 
 **Depends on:** G-MORPH-006 G-MORPH-009
 
@@ -296,6 +298,34 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 **Conditions:** The treatment, case, and indexing of any pre-existing basic object after applicativization, including possible double-object behavior, are **UNSPECIFIED**.
 
 **Depends on:** G-MORPH-010 G-MORPH-011 G-MORPH-013 G-SYN-003 G-SYN-006
+
+### G-MORPH-015 — Nominal number inventory
+
+**Statement:** Nominal number distinguishes zero-marked singular, productive plural, productive collective, and an archaic/restricted dual.
+
+**Conditions:** The dual is retained for conventional natural pairings rather than as a fully productive general number category. The precise lexical or semantic licensing of natural-pair duals and the segmental forms of PL, COLL, and DU remain **UNSPECIFIED**.
+
+### G-MORPH-016 — Shared person-index bases
+
+**Statement:** The bound person-index system has the underlying bases `-k-` 1P, `-t-` 2P, and `-p-` 3P. The same person bases underlie both the OBJ/PAT and SUBJ/AGT slots.
+
+**Conditions:** Person is primary in these bound indexes; number and clusivity are not obligatorily fused into the `k/t/p` contrast. Because the two indexing slots occur in different morphological environments, regular morphophonology may produce different surface reflexes. Slot-specific allomorphy is not assumed unless the general rules fail to derive an accepted form.
+
+### G-MORPH-017 — Alignment domains of verbal indexing
+
+**Statement:** OBJ/PAT indexing has an absolutive/inactive domain: it indexes transitive P and inactive intransitive S. SUBJ/AGT indexing has an ergative/active domain: it indexes transitive A and active intransitive S. An applied participant promoted to ABS under G-MORPH-014 is eligible for OBJ/PAT indexing.
+
+**Conditions:** Eligibility for an indexing domain does not require overt realization in every clause. Person, animacy, definiteness, discourse status, or other factors may condition overt realization, but those conditions remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-006 G-MORPH-009 G-MORPH-014 G-MORPH-016 G-SYN-002 G-SYN-003
+
+### G-MORPH-018 — Free pronouns and bound indexes
+
+**Statement:** Free pronouns and the bound `k/t/p` person indexes reflect a shared older person system, but the bound indexes are synchronically grammaticalized verbal morphology. Modern free pronouns need not correspond transparently or one-to-one to the bound forms.
+
+**Conditions:** The synchronic forms and internal morphology of free pronouns remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-016
 
 ### Derivation and compounding
 
@@ -335,17 +365,17 @@ Internal noun-phrase order and agreement are **UNSPECIFIED**.
 
 **Statement:** Core argument identification uses both nominal case marking and verbal argument indexing.
 
-**Conditions:** The case inventory is specified by G-MORPH-006. Case and/or indexing may be differential according to grammatical or semantic properties, and selected pronouns or historically older constructions may preserve distinct patterns. The indexing inventory, conditioning hierarchy, and distribution of differential marking remain **UNSPECIFIED**.
+**Conditions:** The case inventory is specified by G-MORPH-006. The person-index bases and their core alignment domains are specified by G-MORPH-016–017. Case and/or overt indexing may be differential according to grammatical or semantic properties, and selected pronouns or historically older constructions may preserve distinct patterns. The conditioning hierarchy and distribution of differential marking remain **UNSPECIFIED**.
 
-**Depends on:** G-SYN-002
+**Depends on:** G-SYN-002 G-MORPH-016 G-MORPH-017
 
 ### G-SYN-004 — Predicate-centered split predicate system
 
-**Statement:** Verbs, adjectives, and some nouns may function directly as predicates and may share portions of the inflectional system. Predicate classes need not behave identically, and some nonverbal predicates may require copular or auxiliary support.
+**Statement:** Verbs, including stative/property verbs, and some nouns may function directly as predicates. Property concepts conventionally expressed by adjectives in some languages are stative verbs in Minitongue; there is no separate canonical adjective lexical class.
 
 **Exceptions:** Older copular or auxiliary constructions may survive in restricted environments once explicitly established.
 
-**Conditions:** The predicate classes, shared inflectional categories, and distribution of copular material are **UNSPECIFIED**.
+**Conditions:** Stative verbs use the ordinary verbal architecture rather than a dedicated adjective/stative paradigm. Individual combinations with aspect, directionals, applicatives, or other verbal morphology are licensed by semantic compatibility. The distribution of direct nominal predication and any copular or auxiliary support remains **UNSPECIFIED**.
 
 ### G-SYN-005 — Argument omission and valency are distinct
 
@@ -389,7 +419,23 @@ Information-structure rules governing constituent-order flexibility and argument
 
 ## Lexical conventions
 
-No canonical lexical classes or lexical entries have yet been established beyond the structural categories described above.
+### G-LEX-001 — Layered root and citation-stem representation
+
+**Statement:** Canonical lexical entries distinguish a synchronic morphological root from the ordinary citation stem when that distinction is structurally relevant. For verbs, `lemma` is the unindexed nonfinite a-grade citation form. For nouns, `lemma` is the case-neutral citation stem. An underlying root is stored in `features` when needed for productive morphological analysis.
+
+**Conditions:** Ordinary root behavior is inferred from the stored form and general rules. A lexical root or morphophonological class is recorded explicitly only when behavior is not predictable. Historical reconstructions belong in `etymology`, not in the synchronic root representation. A verbal entry records its canonical lexical valency frame in `features`; the controlled machine vocabulary for those feature values remains **UNSPECIFIED** until lexical entries are added.
+
+### G-LEX-002 — Lexical sense individuation
+
+**Statement:** Predictable contextual and compositionally derived meanings remain within one lexical sense. A new `sense_id` is created when a meaning is lexicalized, has distinct argument structure or grammatical selection, or has materially different usage constraints.
+
+**Conditions:** Directional, case, applicative, and other productive compositional meanings are not duplicated as lexical senses merely because they require different English translations.
+
+### G-LEX-003 — Selective explanatory etymology
+
+**Statement:** Lexical etymology is recorded when it explains a synchronically important alternation, asymmetry, irregularity, or morphological relationship. Transparent lexemes need not receive reconstructed histories solely for completeness.
+
+No canonical lexical entries have yet been established.
 
 ## Glossing conventions
 
@@ -419,15 +465,16 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - the membership of non-tense suffixes in the dominant/fusing versus recessive/transparent contraction classes;
 - the identity and behavior of stress-attracting and stress-neutral suffix classes, and whether either stress class correlates with contraction-class membership;
 - the entire orthographic system;
-- POS inventory and all lexical entries;
-- case-suffix forms, number morphology, and complete paradigms;
+- canonical lexical entries and the controlled feature vocabulary used for lexical valency;
+- overt case-suffix forms, the segmental forms of PL/COLL/DU, precise licensing of the restricted natural-pair dual, and complete paradigms;
 - semantic conditioning of the active–stative split;
-- OBJ/PAT and SUBJ/AGT indexing forms, inventories, and conditioning;
+- differential overt-indexing conditions and the slot-specific surface reflexes of the shared `k/t/p` person bases;
+- free-pronoun forms, pronominal number/clusivity, deixis, and any pronominally restricted alignment patterns;
 - auxiliary inventory and behavior;
 - conditioning of differential case and indexing;
 - the lexical classes licensing directional GEN and whether DAT extends productively to possession, allegiance, or transfer of control;
 - the segmental forms of the two applicatives, the treatment of a pre-existing object after applicativization, ditransitive argument structure, and any additional valency-changing operations;
-- predicate-class membership and copular distribution;
+- direct nominal-predicate behavior and copular distribution;
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
