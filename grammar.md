@@ -94,9 +94,9 @@ Historical development is modeled selectively. Important subsystems may receive 
 
 **Statement:** Closed syllables, syllables containing /ai ei ui/, and contraction products explicitly marked heavy by G-PHON-012 are heavy. Stress falls on the penultimate syllable by default; a heavy final syllable attracts final stress.
 
-**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The membership and behavior of those suffix classes are **UNSPECIFIED** until the relevant morphology is established. Contraction-class dominance under G-PHON-012 does not by itself imply stress attraction.
+**Conditions:** Morphological suffix classes may override the phonological default by being stress-attracting or stress-neutral. The nominal case and number exponents established by G-MORPH-006 and G-MORPH-015 are stress-neutral, including the archaic/restricted DU `-i`; no stress-attracting nominal inflectional class is established at exponent bootstrap. Contraction-class membership is independent of stress behavior: DU `-i` is dominant/fusing under G-PHON-012 despite remaining stress-neutral.
 
-**Depends on:** G-PHON-006 G-PHON-007 G-PHON-012
+**Depends on:** G-PHON-006 G-PHON-007 G-PHON-012 G-MORPH-006 G-MORPH-015
 
 ## Morphophonology
 
@@ -133,9 +133,9 @@ The three morphologically conditioned sequences /ie ea ae/ are resolved by bound
 | /ea/ | not applicable to the established directional prefixes | /a/ | /e/ |
 | /ae/ | /e/ with retained heavy weight | /e/ with retained heavy weight | /a/ |
 
-**Conditions:** At a directional-prefix + root boundary, repair preserves the root vowel where possible: /i-e/ > /je/ and /a-e/ > heavy /e/. At a stem + suffix boundary, a dominant/fusing suffix controls the resulting vowel in /ie ea ae/, while a recessive/transparent suffix preserves the stem vowel where possible. The tense suffix layer is dominant/fusing; this classification is independent of stress attraction unless a separate prosodic rule states otherwise. Membership of other suffixes in the dominant/fusing versus recessive/transparent contraction classes remains **UNSPECIFIED**.
+**Conditions:** At a directional-prefix + root boundary, repair preserves the root vowel where possible: /i-e/ > /je/ and /a-e/ > heavy /e/. At a stem + suffix boundary, a dominant/fusing suffix controls the resulting vowel in /ie ea ae/, while a recessive/transparent suffix preserves the stem vowel where possible. The tense suffix layer and archaic/restricted nominal DU `-i` are dominant/fusing. Other established nominal case and number suffixes are recessive/transparent by default. POS `-ci` follows its inherited *-ti realization under G-PHON-016 and does not create a vowel-initial suffix boundary. These contraction classes do not by themselves determine stress. Membership of other future suffixes remains **UNSPECIFIED** until their morphology is established.
 
-**Depends on:** G-PHON-005 G-PHON-006 G-MORPH-010 G-MORPH-012
+**Depends on:** G-PHON-005 G-PHON-006 G-MORPH-006 G-MORPH-010 G-MORPH-012 G-MORPH-015
 
 ### G-PHON-013 — Non-nasal consonant assimilation
 
@@ -170,7 +170,7 @@ The three morphologically conditioned sequences /ie ea ae/ are resolved by bound
 
 **Statement:** In inherited *-ti morphology, an open-syllable reflex is written `-ci` and surfaces as [-tɕi], while a reflex followed by a coda consonant is written `-ciC` and has /-ɕiC/.
 
-**Conditions:** The open-syllable [tɕ] is a surface affricate and does not add /tɕ/ to the phoneme inventory. The spelling `-ci` is established for this historical reflex in both environments; broader orthographic correspondences remain governed by the orthography section.
+**Conditions:** The open-syllable [tɕ] is a surface affricate and does not add /tɕ/ to the phoneme inventory. The spelling `-ci` is established for this historical reflex in both environments; broader orthographic correspondences remain governed by the orthography section. POS case `-ci < *-ti` under G-MORPH-006 is a canonical instance of this inherited morphology.
 
 **Depends on:** G-PHON-002 G-PHON-004 G-PHON-007 G-PHON-014
 
@@ -219,15 +219,30 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 **Statement:** The nominal case inventory is ABS, ERG, GEN, DAT, LOC, CONT, POS, and INS/COM. ABS marks transitive P and inactive S; ERG marks transitive A and active S. GEN marks dependency relations including possession, affiliation, and part–whole relations. DAT marks an affected personal domain. LOC marks general spatial reference, CONT marks bounded containment or inclusion, POS marks contact/configuration/position, and INS/COM marks instrumental or associative/comitative relations. ABS is zero-marked.
 
-**Conditions:** The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class remain **UNSPECIFIED**. Differential marking conditions and the segmental forms of the overt case suffixes remain **UNSPECIFIED**.
+The accepted exponent bootstrap is:
 
-**Depends on:** G-SYN-002 G-SYN-003
+| Case | Exponent/history | Status |
+| --- | --- | --- |
+| ABS | `Ø` | synchronic |
+| ERG | `-k` | synchronic old core exponent |
+| GEN | `-n` | synchronic old core exponent |
+| DAT | `-m < *-ma` | synchronic `-m`; word-final realization requires the unresolved word-edge rule noted in G-MORPH-019 |
+| LOC | `-t < *-t` | synchronic minimal member of the spatial/configurational family |
+| CONT | `-ta < *-ta` | synchronically indivisible historical expansion of LOC |
+| POS | `-ci < *-ti` | synchronically indivisible inherited reflex governed by G-PHON-016 |
+| INS/COM | `*-pa > *-p` | historical source accepted; exact synchronic output remains **UNSPECIFIED** pending canonical *p positional reflexes |
+
+LOC, CONT, and POS form a historical spatial/configurational family, but CONT and POS are not synchronically parsed as LOC plus an extension. DAT and INS/COM are formally independent younger relational cases.
+
+**Conditions:** The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class remain **UNSPECIFIED**. Differential marking conditions remain **UNSPECIFIED**. The DAT word-edge realization and the synchronic INS/COM output remain **UNSPECIFIED** for the reasons stated in G-MORPH-019; do not introduce case-specific allomorphy to repair them ad hoc.
+
+**Depends on:** G-PHON-007 G-PHON-016 G-SYN-002 G-SYN-003 G-MORPH-019
 
 ### G-MORPH-007 — Nominal inflection template
 
 **Statement:** The nominal template is `NOUN-(NUMBER)-(GEN)-CASE`, with number optional.
 
-**Conditions:** GEN may occur as the sole case marker or as an inner case before an eligible outer case under G-MORPH-008. Number categories and their productivity are specified by G-MORPH-015; their segmental forms remain **UNSPECIFIED**.
+**Conditions:** GEN may occur as the sole case marker or as an inner case before an eligible outer case under G-MORPH-008. Number categories, productivity, and exponents are specified by G-MORPH-015. Case exponents are specified by G-MORPH-006.
 
 ### G-MORPH-008 — Restricted genitive case stacking
 
@@ -285,11 +300,11 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 ### G-MORPH-013 — Two applicative classes
 
-**Statement:** Minitongue has two productive applicative classes. An affected applicative promotes a DAT participant. A general oblique applicative promotes an INS/COM, LOC, CONT, or POS participant.
+**Statement:** Minitongue has two productive applicative classes. The general oblique applicative is `-s-` and promotes an INS/COM, LOC, CONT, or POS participant. The affected applicative is `-ɕ-` and promotes a DAT participant.
 
-**Conditions:** Each applicative is represented by one compact underlying segmental form once established; its surface variants are derived by the general morphophonology unless a separate rule establishes otherwise. The segmental forms themselves and any historical relationship between the two applicatives remain **UNSPECIFIED**. GEN is not a productive applicative input. Applicatives occupy the AUX/APP position in G-MORPH-009.
+**Conditions:** The general oblique `-s-` is historically older and structurally more basic. The affected `-ɕ-` is historically related to `*-s-` by palatalization from an older specialized formation, but the exact palatalizing material is **UNSPECIFIED**. Synchronically, `-s-` and `-ɕ-` are separate indivisible exponents, not transparently compositional variants of one morpheme. Surface variants are derived by the general morphophonology unless a separate accepted rule establishes otherwise. GEN is not a productive applicative input. Applicatives occupy the AUX/APP position in G-MORPH-009.
 
-**Depends on:** G-MORPH-006 G-MORPH-009
+**Depends on:** G-MORPH-006 G-MORPH-009 G-PHON-011 G-PHON-013 G-PHON-014 G-PHON-015
 
 ### G-MORPH-014 — Applicative promotion and directional interaction
 
@@ -301,15 +316,17 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 ### G-MORPH-015 — Nominal number inventory
 
-**Statement:** Nominal number distinguishes zero-marked singular, productive plural, productive collective, and an archaic/restricted dual.
+**Statement:** Nominal number distinguishes zero-marked singular `Ø`, productive plural `-r`, productive collective `-ru`, and archaic/restricted dual `-i`.
 
-**Conditions:** The dual is retained for conventional natural pairings rather than as a fully productive general number category. The precise lexical or semantic licensing of natural-pair duals and the segmental forms of PL, COLL, and DU remain **UNSPECIFIED**.
+**Conditions:** PL `-r` is the minimal member of the productive number family. COLL `-ru < *-r-u` is historically an augmented collective built on the plural base but is synchronically an indivisible suffix; historical `*-u` carried the group/collective function. DU `-i` is an older reduced relic restricted to conventional natural pairings rather than a fully productive general number category. Its precise lexical or semantic licensing remains **UNSPECIFIED**. Under G-PHON-012, DU `-i` is dominant/fusing; PL and COLL follow the default recessive/transparent nominal class. All established number suffixes are stress-neutral under G-PHON-005.
+
+**Depends on:** G-PHON-005 G-PHON-012
 
 ### G-MORPH-016 — Shared person-index bases
 
 **Statement:** The bound person-index system has the underlying bases `-k-` 1P, `-t-` 2P, and `-p-` 3P. The same person bases underlie both the OBJ/PAT and SUBJ/AGT slots.
 
-**Conditions:** Person is primary in these bound indexes; number and clusivity are not obligatorily fused into the `k/t/p` contrast. Because the two indexing slots occur in different morphological environments, regular morphophonology may produce different surface reflexes. Slot-specific allomorphy is not assumed unless the general rules fail to derive an accepted form.
+**Conditions:** Person is primary in these bound indexes; number and clusivity are not obligatorily fused into the `k/t/p` contrast. Because the two indexing slots occur in different morphological environments, regular morphophonology may produce different surface reflexes. At exponent bootstrap no slot-specific person allomorphy is established: differences between OBJ/PAT and SUBJ/AGT realizations must first be derived from their distinct template positions and the general morphophonology. True index-specific allomorphy may be added only if an accepted paradigm cannot be derived otherwise.
 
 ### G-MORPH-017 — Alignment domains of verbal indexing
 
@@ -329,11 +346,11 @@ GEN is exceptional: with predicates whose lexical semantics permit change in a g
 
 ### G-MORPH-019 — Underlying case forms and regular surface realization
 
-**Statement:** Each overt nominal case is represented by one minimal underlying suffix once its segmental form is established. Surface variants are derived through the general vowel repair, assimilation, fusion, and deletion rules before case-specific allomorphy is considered.
+**Statement:** Each overt nominal case is represented by one minimal underlying exponent once its synchronic form is established. Surface variants are derived through the general vowel repair, assimilation, fusion, deletion, and independently established historical reflex rules before case-specific allomorphy is considered.
 
-**Conditions:** Case-specific allomorphs are introduced only when an accepted form cannot be derived from the general morphophonology. The segmental forms of the overt cases remain **UNSPECIFIED**.
+**Conditions:** The accepted case exponents and historical sources are listed in G-MORPH-006. Case-specific allomorphs are introduced only when an accepted form cannot be derived from the general morphophonology. Two word-edge realizations remain **UNSPECIFIED** rather than being repaired ad hoc: synchronic DAT `-m` conflicts with the exhaustive word-final coda inventory of G-PHON-007, and INS/COM has the accepted history `*-pa > *-p` but its canonical positional *p reflex has not yet been promoted to `main`. Establish a dedicated general word-edge/historical rule before canonicalizing those surface outputs.
 
-**Depends on:** G-MORPH-006 G-PHON-011 G-PHON-012 G-PHON-013 G-PHON-014 G-PHON-015
+**Depends on:** G-MORPH-006 G-PHON-007 G-PHON-011 G-PHON-012 G-PHON-013 G-PHON-014 G-PHON-015
 
 ### Derivation and compounding
 
@@ -474,16 +491,16 @@ The following matters remain **UNSPECIFIED** in the current design state:
 - the identity and behavior of stress-attracting and stress-neutral suffix classes, and whether either stress class correlates with contraction-class membership;
 - the entire orthographic system;
 - canonical lexical entries and the controlled feature vocabulary used for lexical valency;
-- overt case-suffix forms, the segmental forms of PL/COLL/DU, precise licensing of the restricted natural-pair dual, and complete paradigms;
+- DAT word-final realization, the canonical positional reflex of inherited INS/COM `*-pa > *-p`, precise licensing of the restricted natural-pair dual, and complete paradigms;
 - semantic conditioning of the active–stative split;
-- differential overt-indexing conditions and the slot-specific surface reflexes of the shared `k/t/p` person bases;
+- differential overt-indexing conditions and any future slot-specific surface reflexes of the shared `k/t/p` person bases not derivable from general morphophonology;
 - free-pronoun forms, pronominal number/clusivity, deixis, and any pronominally restricted alignment patterns;
 - auxiliary inventory and behavior;
 - conditioning of differential case and indexing;
 - the lexical classes licensing directional GEN and whether DAT extends productively to possession, allegiance, or transfer of control;
-- the segmental forms of the two applicatives, the treatment of a pre-existing object after applicativization, ditransitive argument structure, and any additional valency-changing operations;
+- the exact historical palatalizing material relating affected APP `-ɕ-` to older oblique APP `*-s-`, the treatment of a pre-existing object after applicativization, ditransitive argument structure, and any additional valency-changing operations;
 - direct nominal-predicate behavior and copular distribution;
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Canonical regression examples are not yet added because the lexicon remains empty and the segmental forms of overt case suffixes and applicatives, together with the differential and slot-specific surface realization of indexing, remain **UNSPECIFIED**. The directional, TAM, and underlying person-index forms are established, but complete examples would still require inventing canonical lexical and inflectional material.
+Canonical regression examples are not yet added because the lexicon remains empty. The exponent bootstrap now establishes most nominal case, number, applicative, directional, TAM, and underlying person-index material, but complete examples would still require inventing canonical lexemes; DAT word-final realization and the synchronic INS/COM reflex also remain **UNSPECIFIED**.
