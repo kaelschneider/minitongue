@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the canonical Minitongue repository.
+"""Validate and mechanically inspect the canonical Minitongue repository.
 
 Dependency-free checks cover file shape, IDs, references, JSON-in-TSV,
 Unicode NFC, bare IPA storage, and mechanically checkable Leipzig alignment.
-If the optional `jsonschema` package is installed, schema.json is also checked
-against its declared meta-schema.
+Discovery modes expose repository facts that should be obtained mechanically
+rather than rediscovered by inspection or model inference. If the optional
+`jsonschema` package is installed, schema.json is also checked against its
+declared meta-schema.
 """
 
 from __future__ import annotations
@@ -448,11 +450,233 @@ def validate_schema(path: Path, report: Report) -> None:
         report.error(f"{path}: JSON Schema meta-validation failed: {exc}")
 
 
+
+def read_tsv_unchecked(path: Path, expected_header: list[str]) -> list[dict[str, str]]:
+    """Read a validated TSV for discovery/reporting without mutating validation state."""
+    text = path.read_text(encoding="utf-8-sig")
+    rows = list(csv.reader(text.splitlines(), delimiter="\t", quoting=csv.QUOTE_MINIMAL))
+    if not rows or rows[0] != expected_header:
+        return []
+    return [dict(zip(expected_header, row)) for row in rows[1:] if len(row) == len(expected_header)]
+
+
+def next_numbered_id(existing: Iterable[str], prefix: str, width: int) -> str:
+    numbers: list[int] = []
+    pattern = re.compile(rf"^{re.escape(prefix)}([0-9]+)$")
+    for value in existing:
+        match = pattern.fullmatch(value)
+        if match:
+            numbers.append(int(match.group(1)))
+    return f"{prefix}{(max(numbers, default=0) + 1):0{width}d}"
+
+
+def unresolved_items(path: Path) -> list[dict[str, object]]:
+    """Return explicit UNSPECIFIED occurrences with source location and nearest context."""
+    text = path.read_text(encoding="utf-8-sig")
+    current_section = ""
+    current_rule = ""
+    items: list[dict[str, object]] = []
+
+    for lineno, line in enumerate(text.splitlines(), 1):
+        rule_match = RULE_HEADING_RE.match(line)
+        if rule_match:
+            current_rule = rule_match.group(1)
+            current_section = rule_match.group(2)
+        else:
+            heading_match = re.match(r"^(#{2,3})\s+(.+?)\s*$", line)
+            if heading_match:
+                current_section = heading_match.group(2)
+                if len(heading_match.group(1)) <= 2:
+                    current_rule = ""
+
+        if "UNSPECIFIED" in line:
+            items.append(
+                {
+                    "line": lineno,
+                    "rule_id": current_rule or None,
+                    "section": current_section or None,
+                    "text": line.strip(),
+                }
+            )
+    return items
+
+
+def grammar_rule_block(path: Path, rule_id: str) -> str | None:
+    lines = path.read_text(encoding="utf-8-sig").splitlines()
+    start = None
+    for i, line in enumerate(lines):
+        match = RULE_HEADING_RE.match(line)
+        if match and match.group(1) == rule_id:
+            start = i
+            break
+    if start is None:
+        return None
+
+    end = len(lines)
+    for i in range(start + 1, len(lines)):
+        if re.match(r"^#{1,3}\s+", lines[i]):
+            end = i
+            break
+    return "\n".join(lines[start:end]).rstrip()
+
+
+def show_record(root: Path, identifier: str) -> dict[str, object] | None:
+    """Return the exact canonical record(s) associated with a stable ID."""
+    if RULE_RE.fullmatch(identifier):
+        block = grammar_rule_block(root / GRAMMAR_FILE, identifier)
+        if block is None:
+            return None
+        return {"kind": "rule", "id": identifier, "source": GRAMMAR_FILE, "text": block}
+
+    if LEXEME_RE.fullmatch(identifier) or SENSE_RE.fullmatch(identifier):
+        rows = read_tsv_unchecked(root / LEXICON_FILE, LEXICON_HEADER)
+        key = "sense_id" if SENSE_RE.fullmatch(identifier) else "lexeme_id"
+        matches = [row for row in rows if row.get(key) == identifier]
+        if not matches:
+            return None
+        return {"kind": "sense" if key == "sense_id" else "lexeme", "id": identifier, "source": LEXICON_FILE, "records": matches}
+
+    if EXAMPLE_RE.fullmatch(identifier):
+        rows = read_tsv_unchecked(root / EXAMPLES_FILE, EXAMPLES_HEADER)
+        matches = [row for row in rows if row.get("example_id") == identifier]
+        if not matches:
+            return None
+        return {"kind": "example", "id": identifier, "source": EXAMPLES_FILE, "records": matches}
+
+    return None
+
+
+def collect_summary(
+    root: Path,
+    rules: set[str],
+    pos_codes: set[str],
+    custom_abbr: set[str],
+) -> dict[str, object]:
+    lex_rows = read_tsv_unchecked(root / LEXICON_FILE, LEXICON_HEADER)
+    ex_rows = read_tsv_unchecked(root / EXAMPLES_FILE, EXAMPLES_HEADER)
+
+    lexeme_ids = sorted({row["lexeme_id"] for row in lex_rows if row.get("lexeme_id")})
+    sense_ids = sorted({row["sense_id"] for row in lex_rows if row.get("sense_id")})
+    example_ids = sorted({row["example_id"] for row in ex_rows if row.get("example_id")})
+
+    rule_domains: dict[str, int] = {}
+    next_rule_ids: dict[str, str] = {}
+    for domain in ("PHON", "ORTH", "MORPH", "SYN", "SEM", "PRAG", "DISC", "LEX"):
+        domain_ids = sorted(rule for rule in rules if rule.startswith(f"G-{domain}-"))
+        rule_domains[domain] = len(domain_ids)
+        next_rule_ids[domain] = next_numbered_id(domain_ids, f"G-{domain}-", 3)
+
+    judgment_counts = {"grammatical": 0, "ungrammatical": 0, "marginal": 0}
+    referenced_rules: set[str] = set()
+    referenced_lexemes: set[str] = set()
+    for row in ex_rows:
+        judgment = row.get("judgment", "")
+        if judgment in judgment_counts:
+            judgment_counts[judgment] += 1
+        referenced_rules.update(split_refs(row.get("rule_refs", "")))
+        referenced_rules.update(split_refs(row.get("violated_rule_refs", "")))
+        referenced_lexemes.update(split_refs(row.get("lexeme_refs", "")))
+
+    unresolved = unresolved_items(root / GRAMMAR_FILE)
+    uncovered_rules = sorted(rules - referenced_rules)
+    unreferenced_lexemes = sorted(set(lexeme_ids) - referenced_lexemes)
+
+    return {
+        "rules": {
+            "total": len(rules),
+            "by_domain": rule_domains,
+            "with_regression_coverage": len(rules & referenced_rules),
+            "without_regression_coverage": len(uncovered_rules),
+            "uncovered_rule_ids": uncovered_rules,
+        },
+        "lexicon": {
+            "lexemes": len(lexeme_ids),
+            "senses": len(sense_ids),
+            "referenced_by_examples": len(set(lexeme_ids) & referenced_lexemes),
+            "unreferenced_lexeme_ids": unreferenced_lexemes,
+        },
+        "examples": {
+            "total": len(ex_rows),
+            "by_judgment": judgment_counts,
+        },
+        "inventories": {
+            "pos_codes": sorted(pos_codes),
+            "project_gloss_abbreviations": sorted(custom_abbr),
+        },
+        "unresolved": {
+            "explicit_occurrences": len(unresolved),
+        },
+        "next_ids": {
+            "lexeme": next_numbered_id(lexeme_ids, "L-", 4),
+            "example": next_numbered_id(example_ids, "EX-", 4),
+            "rules": next_rule_ids,
+        },
+    }
+
+
+def print_summary(summary: dict[str, object]) -> None:
+    rules = summary["rules"]
+    lexicon = summary["lexicon"]
+    examples = summary["examples"]
+    inventories = summary["inventories"]
+    unresolved = summary["unresolved"]
+    next_ids = summary["next_ids"]
+
+    print("Repository summary:")
+    print(f"  rules: {rules['total']} ({', '.join(f'{k}={v}' for k, v in rules['by_domain'].items())})")
+    print(
+        f"  regression coverage: {rules['with_regression_coverage']}/{rules['total']} rules; "
+        f"{rules['without_regression_coverage']} uncovered"
+    )
+    print(f"  lexicon: {lexicon['lexemes']} lexemes, {lexicon['senses']} senses")
+    print(
+        f"  examples: {examples['total']} "
+        f"(grammatical={examples['by_judgment']['grammatical']}, "
+        f"ungrammatical={examples['by_judgment']['ungrammatical']}, "
+        f"marginal={examples['by_judgment']['marginal']})"
+    )
+    print(f"  explicit UNSPECIFIED occurrences: {unresolved['explicit_occurrences']}")
+    print(f"  POS codes: {', '.join(inventories['pos_codes']) or '(none)'}")
+    print(
+        "  project gloss abbreviations: "
+        f"{', '.join(inventories['project_gloss_abbreviations']) or '(none)'}"
+    )
+    print(f"  next lexeme ID: {next_ids['lexeme']}")
+    print(f"  next example ID: {next_ids['example']}")
+    print("  next rule IDs: " + ", ".join(next_ids["rules"].values()))
+
+
+def print_unresolved(items: list[dict[str, object]]) -> None:
+    if not items:
+        print("No explicit UNSPECIFIED occurrences.")
+        return
+    for item in items:
+        context = item["rule_id"] or item["section"] or GRAMMAR_FILE
+        print(f"{GRAMMAR_FILE}:{item['line']} [{context}] {item['text']}")
+
+
+def print_show_result(result: dict[str, object]) -> None:
+    if result["kind"] == "rule":
+        print(result["text"])
+        return
+    print(f"{result['source']} :: {result['id']}")
+    for record in result["records"]:
+        print(json.dumps(record, ensure_ascii=False, sort_keys=False))
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", default=".", help="repository root (default: current directory)")
     parser.add_argument("--strict", action="store_true", help="treat warnings as failures")
+    parser.add_argument("--summary", action="store_true", help="print mechanically derived repository summary and next IDs")
+    parser.add_argument("--unresolved", action="store_true", help="list every explicit UNSPECIFIED occurrence with source context")
+    parser.add_argument("--show", metavar="ID", help="show the exact canonical rule, lexeme, sense, or example for a stable ID")
+    parser.add_argument("--json", action="store_true", help="emit discovery output as JSON; requires --summary, --unresolved, or --show")
     args = parser.parse_args(argv)
+
+    discovery_requested = bool(args.summary or args.unresolved or args.show)
+    if args.json and not discovery_requested:
+        parser.error("--json requires --summary, --unresolved, or --show")
 
     root = Path(args.root).resolve()
     report = Report(errors=[], warnings=[])
@@ -460,25 +684,64 @@ def main(argv: list[str] | None = None) -> int:
     for rel in (GRAMMAR_FILE, LEXICON_FILE, EXAMPLES_FILE, SCHEMA_FILE):
         if not (root / rel).is_file():
             report.error(f"missing required file: {root / rel}")
-    if report.errors:
+
+    rules: set[str] = set()
+    pos_codes: set[str] = set()
+    custom_abbr: set[str] = set()
+    lex_count = 0
+    ex_count = 0
+
+    if not report.errors:
+        rules, pos_codes, custom_abbr = parse_grammar(root / GRAMMAR_FILE, report)
+        lexeme_ids, _sense_ids, lex_count = validate_lexicon(root / LEXICON_FILE, pos_codes, report)
+        ex_count = validate_examples(root / EXAMPLES_FILE, rules, lexeme_ids, custom_abbr, report)
+        validate_schema(root / SCHEMA_FILE, report)
+
+    payload: dict[str, object] = {
+        "validation": {
+            "errors": report.errors,
+            "warnings": report.warnings,
+            "counts": {
+                "grammar_rules": len(rules),
+                "lexical_senses": lex_count,
+                "examples": ex_count,
+            },
+        }
+    }
+
+    if not report.errors and discovery_requested:
+        if args.summary:
+            payload["summary"] = collect_summary(root, rules, pos_codes, custom_abbr)
+        if args.unresolved:
+            payload["unresolved"] = unresolved_items(root / GRAMMAR_FILE)
+        if args.show:
+            result = show_record(root, args.show)
+            if result is None:
+                report.error(f"no canonical record found for {args.show!r}")
+                payload["validation"]["errors"] = report.errors
+            else:
+                payload["show"] = result
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True))
+    else:
+        for message in report.warnings:
+            print(f"WARN: {message}")
         for message in report.errors:
             print(f"ERROR: {message}")
-        return 1
 
-    rules, pos_codes, custom_abbr = parse_grammar(root / GRAMMAR_FILE, report)
-    lexeme_ids, _sense_ids, lex_count = validate_lexicon(root / LEXICON_FILE, pos_codes, report)
-    ex_count = validate_examples(root / EXAMPLES_FILE, rules, lexeme_ids, custom_abbr, report)
-    validate_schema(root / SCHEMA_FILE, report)
+        print(
+            f"Checked: {len(rules)} grammar rules, {lex_count} lexical senses, "
+            f"{ex_count} examples; {len(report.errors)} error(s), {len(report.warnings)} warning(s)."
+        )
 
-    for message in report.warnings:
-        print(f"WARN: {message}")
-    for message in report.errors:
-        print(f"ERROR: {message}")
-
-    print(
-        f"Checked: {len(rules)} grammar rules, {lex_count} lexical senses, "
-        f"{ex_count} examples; {len(report.errors)} error(s), {len(report.warnings)} warning(s)."
-    )
+        if not report.errors:
+            if args.summary:
+                print_summary(payload["summary"])
+            if args.unresolved:
+                print_unresolved(payload["unresolved"])
+            if args.show:
+                print_show_result(payload["show"])
 
     if report.errors or (args.strict and report.warnings):
         return 1
