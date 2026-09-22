@@ -217,10 +217,26 @@ Declare every `lexicon.tsv` POS code here. Keep codes short, stable, and machine
 
 | Code | Name | Notes |
 | --- | --- | --- |
+| v | verb | Includes inherited semantic-primal roots. |
 
 ### Nominal morphology
 
-The case inventory, nominal inflectional categories, and differential case-marking conditions are **UNSPECIFIED**.
+### G-MORPH-020 — Relational case inventory and core alignment
+
+**Statement:** The nominal case inventory is ABS, ERG, GEN, DAT, LOC, CONT, POS, and INS/COM. ABS marks transitive P and inactive S; ERG marks transitive A and active S. GEN marks dependency relations including possession, affiliation, and part–whole relations. DAT marks an affected personal domain whose productive core includes recipients, beneficiaries, and maleficiaries. LOC marks general spatial reference, CONT marks bounded containment or inclusion, POS marks contact/configuration/position, and INS/COM marks instrumental or associative/comitative relations.
+
+**Conditions:** Experiencers are not productively assigned DAT merely by virtue of being experiencers. The semantic or lexical criteria assigning intransitive S arguments to the active versus inactive class, differential marking conditions, and the segmental forms of case suffixes remain **UNSPECIFIED**.
+
+**Depends on:** G-SYN-002 G-SYN-003
+
+### G-MORPH-021 — Nominal inflection and restricted genitive stacking
+
+**Statement:** The nominal template is `NOUN-(NUMBER)-(GEN)-CASE`, with number optional. GEN may occur as the sole case marker or as an inner case before DAT, LOC, CONT, POS, or INS/COM.
+
+**Conditions:** GEN does not stack with ABS or ERG, and DAT, LOC, CONT, POS, and INS/COM do not productively stack with one another. The inventory and forms of number marking remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-020
+
 
 ### Pronominal and deictic systems
 
@@ -239,11 +255,13 @@ Person, number, clusivity, deixis, and any pronominally restricted alignment or 
 | /i/ | IRREALIS | hi- |
 | /e/ | LINKING | he- |
 
-**Conditions:** The established test roots include *h SAY/UTTER and *r MOVE/TURN; thus ra is the nonfinite ‘to go’. The broader lexical inventory of the semantic-primal class is not enumerated here. The exact constructional distribution of the NONFINITE, IRREALIS, and LINKING grades beyond the values stated above remains **UNSPECIFIED**.
+**Conditions:** The canonical semantic-primal root inventory and broad lexical schemas are specified by G-LEX-001; thus ha is the nonfinite of *h EXPRESS/COMMUNICATE and ra is the nonfinite of *r MOTION/REORIENTATION. The exact constructional distribution of the NONFINITE, IRREALIS, and LINKING grades beyond the values stated above remains **UNSPECIFIED**.
+
+**Depends on:** G-LEX-001
 
 ### G-MORPH-007 — Inherited semantic-primal person–tense template
 
-**Statement:** Finite REALIS forms of the inherited semantic-primal conjugation use the underlying template ROOT-u-(ASSERT)-PERSON-TENSE. The inherited person consonants are *-k- ‘1’, *-t- ‘2’, and *-p- ‘3’. The tense vowels are *-i NONPAST and *-a PAST.
+**Statement:** Non-applicative finite REALIS forms of the inherited semantic-primal conjugation use the underlying template ROOT-u-(ASSERT)-PERSON-TENSE. Applicative finite forms expand this template under G-MORPH-027. The inherited person consonants are *-k- ‘1’, *-t- ‘2’, and *-p- ‘3’. The tense vowels are *-i NONPAST and *-a PAST.
 
 **Synchronic analysis:** Person and tense remain morphologically segmentable, but inherited sound change and analogy create fused surface allomorphs.
 
@@ -277,7 +295,89 @@ The geminates block the ordinary NONPAST palatalization/merger and the plain-PAS
 
 **Depends on:** G-MORPH-007 G-PHON-022
 
-The inventory and ordering of verbal categories, argument-indexing exponence, TAM categories, and valency-changing affixes outside this inherited semantic-primal subsystem remain **UNSPECIFIED**.
+### G-MORPH-022 — Directional prefixes and relational composition
+
+**Statement:** The directional prefixes are `i-` positive/convergent, `a-` negative/divergent, and zero for neutral directionality. A directional scopes primarily over the case relation of its target: `i-` establishes, enters, approaches, or increases that relation; zero asserts or maintains the relation without directional change; and `a-` exits, departs from, dissolves, or decreases it. The resulting relational change may compositionally structure the event as a whole.
+
+**Productive relations:**
+
+| Case | `i-` convergent | zero neutral | `a-` divergent |
+| --- | --- | --- | --- |
+| DAT | increased receipt, benefit, or affected involvement | stable recipient/beneficiary/maleficiary relation | loss, deprivation, withdrawal, or decreased affected involvement |
+| LOC | approach or arrival at a spatial reference | at/near a spatial reference | departure or movement away from a reference |
+| CONT | entry or placement into bounded inclusion | containment/inclusion | exit or removal from bounded inclusion |
+| POS | assuming or causing contact/configuration | maintaining contact/configuration | leaving or removing from contact/configuration |
+| INS/COM | association, joining, attachment, or taking up as a means | accompaniment, association, instrument/means | dissociation, separation, detachment, or cessation of use |
+
+**Conditions:** Dynamic lexical events remain compatible with zero directionality; zero means that directional change in the relation is not asserted, not that the whole event is stative. Transparent metaphorical extension is productive when the relational structure remains recoverable. CONT and POS allow especially broad bounded-domain and contact/configuration extensions; LOC remains comparatively spatially conservative. GEN is not a productive applicative input, and any directional GEN construction remains **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-020
+
+### G-MORPH-023 — Two applicative classes and promotion
+
+**Statement:** APPL1 is an affected applicative promoting a DAT participant. APPL2 is a general oblique applicative promoting an INS/COM, LOC, CONT, or POS participant. The semantic relation is supplied by the underlying case and the directional system; the applicative changes argument status rather than replacing those relational meanings.
+
+**Promotion:** The applied participant becomes the primary ABS object and is eligible for OBJ indexing. Its underlying relational case determines interpretation but is not retained as its surface case after promotion.
+
+**Productivity:** Both applicatives may combine with intransitive or transitive bases when the root and relation are semantically compatible. APPL2 has one grammatical function across LOC, CONT, POS, and INS/COM rather than separate applicatives for each case. Individual root × relation combinations may nevertheless be infelicitous when their composition has no coherent interpretation.
+
+**Conditions:** The segmental forms, stress classes, and grade-selection behavior of APPL1 and APPL2 remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-020 G-MORPH-022 G-SYN-006
+
+### G-MORPH-024 — Secondary-object alignment under applicativization
+
+**Statement:** With a transitive base, applicativization creates secondary-object alignment. The applied participant is the primary ABS object and has structural priority for the single OBJ-indexing slot. The pre-existing lexical theme remains morphologically ABS but does not compete with the applied participant for ordinary OBJ indexing.
+
+**Conditions:** If a construction independently makes more than one non-applied participant eligible for the OBJ slot, competition follows G-SYN-007. Additional behavioral diagnostics of primary versus secondary objecthood beyond case and indexing remain **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-023 G-SYN-003 G-SYN-006 G-SYN-007
+
+### G-MORPH-025 — Basic-object licensing and ordinary object indexing
+
+**Statement:** The inherited person consonants *-k- ‘1’, *-t- ‘2’, and *-p- ‘3’ also underlie object person marking. Ordinary lexical objects historically combined a generic object-licensing element *-n- with the person consonant. This element originally licensed a core P/object and became specialized as the marker of the basic object selected by lexical valency.
+
+**Ordinary object series:**
+
+| Object | Historical source | Ordinary surface index |
+| --- | --- | --- |
+| 1.OBJ | *-n-k- | -n- < *-ŋ- |
+| 2.OBJ | *-n-t- | -n- |
+| 3.PROX.OBJ | *-n-p- | -m- |
+| 3.OBV.OBJ | ultimately *-p- | -v- |
+
+The 1OBJ and 2OBJ forms are synchronically syncretic as `-n-`. The 3.OBV `-v-` marker is not an independent fourth person consonant: it ultimately derives from the same inherited *-p- third-person marker as 3.PROX.
+
+**Conditions:** The historical fusion of *-n- plus person is specified by G-PHON-024. The exact intermediate history connecting 3.OBV *-p- to `-v-`, including its interaction with the older *-n- object-licensing layer, remains **UNSPECIFIED** beyond G-PHON-025. Synchronically, ordinary speakers need not analyze `-n-/-n-/-m-/-v-` as transparent sequences.
+
+**Depends on:** G-MORPH-007 G-PHON-024 G-PHON-025 G-SYN-007
+
+### G-MORPH-026 — Applied-object person exposure
+
+**Statement:** Applicative morphology supplies the object-licensing operation that historical *-n- supplied to a basic lexical object. Consequently the old *-n- layer is absent in the applied-object construction and the inherited person consonants surface without the ordinary *n+person fusion.
+
+| Applied object | Exposed person index |
+| --- | --- |
+| 1.OBJ | -k- |
+| 2.OBJ | -t- |
+| 3.PROX.OBJ | -p- |
+| 3.OBV.OBJ | -v- |
+
+**Analysis:** The applied series is conservative rather than a separate innovative person paradigm: APPL replaces the generic/basic-object licensing function of *-n-, thereby exposing *-k/*-t/*-p. The obviative `-v-` remains an inherited reflex of third-person *-p-.
+
+**Conditions:** The surface morphophonology where exposed `-k-/-t-/-p-/-v-` meets neighboring directional, root-grade, or applicative material remains governed by established phonology where applicable and is otherwise **UNSPECIFIED**.
+
+**Depends on:** G-MORPH-023 G-MORPH-025 G-PHON-025
+
+### G-MORPH-027 — Semantic-primal applicative finite template
+
+**Statement:** Applicative finite REALIS forms of a semantic-primal root use the morphological template `DIRECTIONAL-OBJ-ROOT-GRADE-APPL-(ASSERT)-PERSON-TENSE`. In REALIS, GRADE is /u/. APPL therefore follows the semantic-primal grade vowel and precedes ASSERT and the inherited subject/agent person–tense sequence.
+
+**Conditions:** The OBJ slot indexes the applied object under G-MORPH-024 and uses the exposed applied-object series of G-MORPH-026. The segmental forms of APPL1/APPL2 are still **UNSPECIFIED**, so no canonical fully surfaced applicative paradigm is established yet.
+
+**Depends on:** G-MORPH-007 G-MORPH-008 G-MORPH-022 G-MORPH-023 G-MORPH-024 G-MORPH-026
+
+The remaining inventory and ordering of verbal categories outside G-MORPH-006–008 and G-MORPH-022–027, additional TAM categories, and additional valency-changing morphology remain **UNSPECIFIED**.
 
 ### Derivation and compounding
 
@@ -355,9 +455,19 @@ Internal noun-phrase order and agreement are **UNSPECIFIED**.
 
 **Statement:** The grammar distinguishes intransitive, transitive, and ditransitive predicate frames and permits productive morphological operations that change valency.
 
-**Conditions:** The argument structure of ditransitives, the inventory of valency operations, and their morphological forms are **UNSPECIFIED**.
+**Conditions:** APPL1/APPL2 and their secondary-object behavior are specified by G-MORPH-023–024. Additional valency-changing operations and non-applicative ditransitive constructions remain **UNSPECIFIED**.
 
-**Depends on:** G-SYN-005
+**Depends on:** G-SYN-005 G-MORPH-023 G-MORPH-024
+
+### G-SYN-007 — Third-person obviation and object-index competition
+
+**Statement:** Third-person object indexing distinguishes proximate from obviative reference. Proximate status tracks greater discourse prominence; within the relevant local domain, when multiple animate third persons require contrast, one is proximate and additional third persons are obviative.
+
+**Hierarchy:** Applied-object status has structural priority for OBJ indexing under G-MORPH-024. Where genuinely competing eligible non-applied objects remain, use the hierarchy `SAP > 3.PROX > 3.OBV`. First and second person form one speech-act-participant tier rather than an inherent 1>2 or 2>1 ranking; grammatical role resolves a 1↔2 tie.
+
+**Conditions:** The exact syntactic/discourse domain within which one third person must be selected as proximate, and the behavior of inanimate third persons in obviation, remain **UNSPECIFIED**.
+
+**Depends on:** G-SYN-003 G-MORPH-024 G-MORPH-025 G-MORPH-026
 
 ### Negation
 
@@ -385,7 +495,29 @@ Information-structure rules governing constituent-order flexibility and argument
 
 ## Lexical conventions
 
-The inherited semantic-primal root class is established morphologically under G-MORPH-006. Canonical lexical entries in `lexicon.tsv`, the full membership of that class, and broader lexical/POS classification remain **UNSPECIFIED** unless separately established.
+### G-LEX-001 — Semantic-primal root inventory and lexicalization policy
+
+**Statement:** The inherited semantic-primal class contains the following canonical roots. Each root has one broad lexical schema; the concrete prototype is a diagnostic center rather than an exhaustive English lexical sense.
+
+| Root | Concrete prototype | Broad lexical schema | Main diagnostic value |
+| --- | --- | --- | --- |
+| *p | BLOW / BREATHE | EMIT / EXPEL | source/goal, inward vs. outward motion, force, emission |
+| *h | SAY / UTTER | EXPRESS / COMMUNICATE | addressee, content, source/goal metaphor |
+| *t | TOUCH | CONTACT | endpoint, surface, instrument, affectedness |
+| *d | REST / STAY | REMAIN / BE SITUATED | static location, persistence, state vs. motion |
+| *k | CUT / BREAK | SEPARATE / DISRUPT INTEGRITY | boundary, source, partitive, result state |
+| *g | HOLD / CONTAIN | RETAIN / ENCLOSE | possession, containment, control, IN/OUT relations |
+| *s | TRACE / FLOW | CONTINUE ALONG / EXTEND | path, continuity, aspect, spatial-to-temporal extension |
+| *m | GATHER / COLLECT | CONVERGE / AGGREGATE | plurality, collective participants, convergence |
+| *n | GIVE / PASS | TRANSFER | ditransitivity, recipient, beneficiary, source/goal |
+| *r | MOVE / TURN | MOTION / REORIENTATION | full spatial-relational system |
+| *j | SENSE / KNOW | PERCEIVE / COGNIZE | experiencer, stimulus, evidential/cognitive extensions |
+
+**Lexicalization policy:** Predictable meanings produced by root + case relation + directional + applicative composition are grammatical interpretations, not additional lexical senses. A derived reading is added to `lexicon.tsv` only if it develops unpredictable semantics or grammatical behavior.
+
+**Conditions:** Root × relation composition is productive but semantically constrained: coherent combinations are licensed without root-specific listing, while incoherent combinations may be infelicitous. Proposed temporal, evidential, possession/control, or other abstract extensions are canonical only where independently licensed by established relational semantics.
+
+**Depends on:** G-MORPH-006 G-MORPH-022 G-MORPH-023
 
 ## Glossing conventions
 
@@ -401,6 +533,11 @@ Add only abbreviations not covered by the Leipzig standard list.
 | LNK | linking grade | Semantic-primal /e/ stem grade. |
 | NFIN | nonfinite | Semantic-primal /a/ stem grade. |
 | NPST | nonpast | Contrasts with PST in the inherited semantic-primal conjugation. |
+| APPL1 | affected applicative | Promotes an underlying DAT participant. |
+| APPL2 | general oblique applicative | Promotes an underlying LOC, CONT, POS, or INS/COM participant. |
+| CONT | containment case | Bounded inclusion/containment relation. |
+| OBV | obviative | Less discourse-prominent third-person status within the relevant obviation domain. |
+| POS | positional case | Contact/configuration/position relation. |
 | REAL | realis | Semantic-primal /u/ stem grade. |
 
 ## Variation and diachrony
@@ -507,6 +644,24 @@ The following sound changes are **experimental historical laws** on the `experim
 
 **Depends on:** G-PHON-018 G-PHON-022
 
+### G-PHON-024 — Historical basic-object + person fusion
+
+**Statement:** In the inherited ordinary-object prefix complex, generic/basic-object *-n- fused with the following person consonant.
+
+**Historical outcomes:** *-n-k- > *-ŋ- > -n- for 1OBJ; *-n-t- > -n- for 2OBJ; *-n-p- > -m- for 3.PROX.OBJ.
+
+**Conditions:** Nasal place assimilation supplied the labial/coronal/dorsal place correspondences, followed by construction-specific historical cluster reduction/fusion. These are inherited outcomes, not a productive rule deleting /k t p/ after /n/ in arbitrary modern sequences. The later normalization of 1OBJ *-ŋ- to phonemic /n/ is specific to this inherited prefix history.
+
+**Depends on:** G-PHON-010
+
+### G-PHON-025 — Historical obviative reflex of third-person *p
+
+**Statement:** Object `-v-` marking 3.OBV ultimately derives from the inherited third-person consonant *-p- and therefore belongs historically to the same third-person series as 3.PROX `-p-` in the exposed applied-object paradigm.
+
+**Conditions:** The development is compatible with the inherited labial weakening pathway *p > /v/ reflected elsewhere in the language, but the exact historical conditioning that selected the obviative `-v-` reflex and its ordering relative to the older *-n- basic-object layer remain **UNSPECIFIED**. Synchronically, obviation is grammaticalized under G-SYN-007.
+
+**Depends on:** G-PHON-018 G-SYN-007
+
 ## Open questions
 
 The following matters remain **UNSPECIFIED** after the phonology/phonotactics design pass:
@@ -516,15 +671,16 @@ The following matters remain **UNSPECIFIED** after the phonology/phonotactics de
 - the non-nasal segment-specific mappings used by assimilation and fusion/contraction, and the deletion target used as last-resort morpheme-boundary repair;
 - the membership of actual suffixes in the neutral, self-stressing, and pre-stressing classes, and their construction-specific STRONG/WEAK grade selection;
 - specialized word-division conventions for compounds and any future clitic classes;
-- POS inventory and lexical entries outside the grammaticalized semantic-primal test system;
-- affix forms, morpheme-order templates, and paradigms outside G-MORPH-006–008;
-- case inventory and the formal realization of active–stative / ergative–absolutive alignment;
-- semantic conditioning of the active–stative split;
-- verbal indexing categories and their ordering/exponence outside the inherited semantic-primal person system;
-- conditioning of differential case and indexing;
+- POS inventory outside the established verb class and lexical entries outside the semantic-primal inventory;
+- segmental forms, stress classes, and grade selection of APPL1/APPL2 and the segmental forms of case suffixes;
+- semantic conditioning of the active–stative split and conditioning of differential case marking;
+- the exact historical path from third-person *-p- to 3.OBV `-v-` and its ordering relative to the older *-n- basic-object layer;
+- surface morphophonology of exposed applied-object `-k-/-t-/-p-/-v-` where existing rules do not determine the result;
+- the exact discourse/syntactic domain of proximate–obviative assignment and the treatment of inanimate third persons;
+- behavioral properties of the secondary object beyond its retained ABS marking and lack of ordinary OBJ-index priority;
 - predicate-class membership and copular distribution;
 - valency-changing morphemes and ditransitive argument structure;
 - discourse rules for constituent-order flexibility and argument omission;
 - negation, interrogation, coordination, subordination, relative clauses, and other constructions outside phases 0–3.
 
-Regression examples are maintained for the established semantic-primal REALIS person–tense and ASSERT constructions. Connected-text testing remains deferred where it would require case, argument-indexing, discourse, or other constructions that are still **UNSPECIFIED**.
+Regression examples are maintained for the established semantic-primal REALIS person–tense and ASSERT constructions. Applicative discovery examples cannot yet be promoted to canonical regression examples because the segmental forms of case suffixes and APPL1/APPL2 remain **UNSPECIFIED**. Connected-text testing of those constructions therefore remains deferred.
